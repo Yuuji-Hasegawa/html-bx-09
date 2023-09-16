@@ -54,7 +54,7 @@
 
     &:hover,
     &:focus {
-      border-color: color-mix(in oklab, var(--c-button-normal),map.get(setting.$sys-light, onContainer) 15%);
+      border-color: color-mix(in oklab, var(--c-button-normal), map.get(setting.$sys-light, onContainer) 15%);
     }
 
     &:focus {
@@ -90,8 +90,8 @@
 
     &:hover,
     &:focus {
-      background-color: color-mix(in oklab,var(--c-bg-secondary),map.get(setting.$sys-light, onContainer) 15%);
-      border-color: color-mix(in oklab, var(--c-bg-secondary),map.get(setting.$sys-light, onContainer) 15%);
+      background-color: color-mix(in oklab, var(--c-bg-secondary), map.get(setting.$sys-light, onContainer) 15%);
+      border-color: color-mix(in oklab, var(--c-bg-secondary), map.get(setting.$sys-light, onContainer) 15%);
     }
 
     &:focus {
@@ -119,8 +119,8 @@
   &--primary-button {
     &:hover,
     &:focus {
-      background-color: color-mix(in oklab,var(--c-button-normal),map.get(setting.$sys-light, onContainer) 15%);
-      border-color: color-mix(in oklab, var(--c-button-normal),map.get(setting.$sys-light, onContainer) 15%);
+      background-color: color-mix(in oklab, var(--c-button-normal), map.get(setting.$sys-light, onContainer) 15%);
+      border-color: color-mix(in oklab, var(--c-button-normal), map.get(setting.$sys-light, onContainer) 15%);
     }
   }
 
@@ -130,8 +130,8 @@
 
     &:hover,
     &:focus {
-      background-color: color-mix(in oklab,var(--c-text-alert),map.get(setting.$sys-light, onContainer) 15%);
-      border-color: color-mix(in oklab, var(--c-text-alert),map.get(setting.$sys-light, onContainer) 15%);
+      background-color: color-mix(in oklab, var(--c-text-alert), map.get(setting.$sys-light, onContainer) 15%);
+      border-color: color-mix(in oklab, var(--c-text-alert), map.get(setting.$sys-light, onContainer) 15%);
     }
   }
 
@@ -166,17 +166,17 @@
     flex-grow: 1;
     color: var(--c-text-description);
     background: var(--c-bg-secondary);
-    border-width: 1px clamp(0px,setting.breakpoints(underm),1px) 0 1px;
+    border-width: 1px clamp(0px, setting.breakpoints(underm), 1px) 0 1px;
 
     &:last-of-type {
-      border-bottom-width: clamp(0px,setting.breakpoints(overm),1px);
+      border-bottom-width: clamp(0px, setting.breakpoints(overm), 1px);
     }
   }
 
   &--tbody {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: clamp(calc(100% - 260px),setting.breakpoints(underm),100%);
+    min-width: clamp(calc(100% - 260px), setting.breakpoints(underm), 100%);
     border-width: 1px 1px 0;
 
     &:last-of-type {

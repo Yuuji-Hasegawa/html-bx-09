@@ -78,7 +78,8 @@ $letterSpacing: (
   @return map.get($letterSpacing, $key);
 }
 
-$font-family: "YakuHanJP_Narrow",
+$font-family:
+  "YakuHanJP_Narrow",
   -apple-system,
   blinkmacsystemfont,
   "Segoe UI",

@@ -18,9 +18,9 @@
   $oklab2: f-rgb-to-oklab($color2);
 
   $labmix: (
-    'l': map.get($oklab1, 'l') * $w1 + map.get($oklab2, 'l') * $w2,
-    'a': map.get($oklab1, 'a') * $w1 + map.get($oklab2, 'a') * $w2,
-    'b': map.get($oklab1, 'b') * $w1 + map.get($oklab2, 'b') * $w2,
+    "l": map.get($oklab1, "l") * $w1 + map.get($oklab2, "l") * $w2,
+    "a": map.get($oklab1, "a") * $w1 + map.get($oklab2, "a") * $w2,
+    "b": map.get($oklab1, "b") * $w1 + map.get($oklab2, "b") * $w2,
   );
 
   $rgb: f-oklab-to-rgb($labmix);
@@ -42,7 +42,7 @@
 }
 
 @function f-cbrt($num) {
-  $one_third: math.div(1,3);
+  $one_third: math.div(1, 3);
   $cbrt: math.pow(math.abs($num), $one_third);
   @if $num < 0 {
     @return -1 * $cbrt;
@@ -66,35 +66,59 @@
   $alpha: color.alpha($color);
 
   $lms: (
-    'l': 0.4122214708 * $red + 0.5363325363 * $green + 0.0514459929 * $blue,
-    'm': 0.2119034982 * $red + 0.6806995451 * $green + 0.1073969566 * $blue,
-    's': 0.0883024619 * $red + 0.2817188376 * $green + 0.6299787005 * $blue,
+    "l": 0.4122214708 * $red + 0.5363325363 * $green + 0.0514459929 * $blue,
+    "m": 0.2119034982 * $red + 0.6806995451 * $green + 0.1073969566 * $blue,
+    "s": 0.0883024619 * $red + 0.2817188376 * $green + 0.6299787005 * $blue,
   );
 
-  $l: 0.2104542553 * f-cbrt(map.get($lms, 'l')) + 0.793617785 * f-cbrt(map.get($lms, 'm')) - 0.0040720468 * f-cbrt(map.get($lms, 's'));
-  $a: 1.9779984951 * f-cbrt(map.get($lms, 'l')) - 2.428592205 * f-cbrt(map.get($lms, 'm')) + 0.4505937099 * f-cbrt(map.get($lms, 's'));
-  $b: 0.0259040371 * f-cbrt(map.get($lms, 'l')) + 0.7827717662 * f-cbrt(map.get($lms, 'm')) - 0.808675766 * f-cbrt(map.get($lms, 's'));
-  @return ('l': $l, 'a': $a, 'b': $b, alpha: $alpha);
+  $l: 0.2104542553 * f-cbrt(map.get($lms, "l")) + 0.793617785 * f-cbrt(map.get($lms, "m")) - 0.0040720468 *
+    f-cbrt(map.get($lms, "s"));
+  $a: 1.9779984951 * f-cbrt(map.get($lms, "l")) - 2.428592205 * f-cbrt(map.get($lms, "m")) + 0.4505937099 *
+    f-cbrt(map.get($lms, "s"));
+  $b: 0.0259040371 * f-cbrt(map.get($lms, "l")) + 0.7827717662 * f-cbrt(map.get($lms, "m")) - 0.808675766 *
+    f-cbrt(map.get($lms, "s"));
+  @return ("l": $l, "a": $a, "b": $b, alpha: $alpha);
 }
 
 @function f-oklab-to-rgb($oklab) {
-  @if meta.type-of($oklab) != 'map' {
+  @if meta.type-of($oklab) != "map" {
     @error "Must provide map of \"l\", \"a\", \"b\" values";
   }
 
   $lms: (
-    'l': math.pow(map.get($oklab, 'l') + 0.39633779217376774 * map.get($oklab, 'a') + 0.2158037580607588 * map.get($oklab, 'b'), 3),
-    'm': math.pow(map.get($oklab, 'l') - 0.10556134232365633 * map.get($oklab, 'a') - 0.0638541747717059 * map.get($oklab, 'b'), 3),
-    's': math.pow(map.get($oklab, 'l') - 0.08948418209496574 * map.get($oklab, 'a') - 1.2914855378640917 * map.get($oklab, 'b'), 3),
+    "l":
+      math.pow(
+        map.get($oklab, "l") + 0.39633779217376774 * map.get($oklab, "a") + 0.2158037580607588 * map.get($oklab, "b"),
+        3
+      ),
+    "m":
+      math.pow(
+        map.get($oklab, "l") - 0.10556134232365633 * map.get($oklab, "a") - 0.0638541747717059 * map.get($oklab, "b"),
+        3
+      ),
+    "s":
+      math.pow(
+        map.get($oklab, "l") - 0.08948418209496574 * map.get($oklab, "a") - 1.2914855378640917 * map.get($oklab, "b"),
+        3
+      ),
   );
 
-  $r: math.max(4.0767416621 * map.get($lms, 'l') - 3.3077115913 * map.get($lms, 'm') + 0.2309699292 * map.get($lms, 's'), 0);
-  $g: math.max(-1.2684380046 * map.get($lms, 'l') + 2.6097574011 * map.get($lms, 'm') - 0.3413193965 * map.get($lms, 's'), 0);
-  $b: math.max(-0.0041960863 * map.get($lms, 'l') - 0.7034186147 * map.get($lms, 'm') + 1.707614701 * map.get($lms, 's'), 0);
+  $r: math.max(
+    4.0767416621 * map.get($lms, "l") - 3.3077115913 * map.get($lms, "m") + 0.2309699292 * map.get($lms, "s"),
+    0
+  );
+  $g: math.max(
+    -1.2684380046 * map.get($lms, "l") + 2.6097574011 * map.get($lms, "m") - 0.3413193965 * map.get($lms, "s"),
+    0
+  );
+  $b: math.max(
+    -0.0041960863 * map.get($lms, "l") - 0.7034186147 * map.get($lms, "m") + 1.707614701 * map.get($lms, "s"),
+    0
+  );
 
   $alpha: 1;
-  @if map.has-key($oklab, 'alpha') {
-    $alpha: map.get($oklab, 'alpha');
+  @if map.has-key($oklab, "alpha") {
+    $alpha: map.get($oklab, "alpha");
   }
 
   @return rgba(f-gamma($r) * 255, f-gamma($g) * 255, f-gamma($b) * 255, $alpha);
@@ -102,12 +126,12 @@
 
 @function f-rgb-to-oklch($color) {
   $oklab: f-rgb-to-oklab($color);
-  $l: map.get($oklab, 'l');
-  $a: map.get($oklab, 'a');
-  $b: map.get($oklab, 'b');
+  $l: map.get($oklab, "l");
+  $a: map.get($oklab, "a");
+  $b: map.get($oklab, "b");
   $alpha: 1;
-  @if (map.has-key($oklab, 'alpha')) {
-    $alpha: map.get($oklab, 'alpha');
+  @if (map.has-key($oklab, "alpha")) {
+    $alpha: map.get($oklab, "alpha");
   }
 
   $h: 0;
@@ -127,16 +151,16 @@
 }
 
 @function f-oklch-to-rgb($oklch) {
-  @if meta.type-of($oklch) != 'map' {
+  @if meta.type-of($oklch) != "map" {
     @error "Must provide map of \"l\", \"c\", \"h\" values";
   }
 
-  $l: map.get($oklch, 'l');
-  $c: map.get($oklch, 'c');
-  $h: map.get($oklch, 'h');
+  $l: map.get($oklch, "l");
+  $c: map.get($oklch, "c");
+  $h: map.get($oklch, "h");
   $alpha: 1;
-  @if (map.has-key($oklch, 'alpha')) {
-    $alpha: map.get($oklch, 'alpha');
+  @if (map.has-key($oklch, "alpha")) {
+    $alpha: map.get($oklch, "alpha");
   }
 
   $const: 0.0002;
@@ -227,21 +251,93 @@
 
 @function f-palette-gen($color) {
   $target: map.get(f-rgb-to-oklab(#ffffff), l);
-  $middle: f-lighten($color, math.div((0.6 * $target - map.get(f-rgb-to-oklab($color), l)), map.get(f-rgb-to-oklab($color), l)));
+  $middle: f-lighten(
+    $color,
+    math.div((0.6 * $target - map.get(f-rgb-to-oklab($color), l)), map.get(f-rgb-to-oklab($color), l))
+  );
   @return (
-    level0: f-lighten($middle, math.div((0 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
-    level10: f-lighten($middle, math.div((0.1 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
-    level20: f-lighten($middle, math.div((0.2 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
-    level30: f-lighten($middle, math.div((0.3 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
-    level40: f-lighten($middle, math.div((0.4 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
-    level50: f-lighten($middle, math.div((0.5 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
+    level0:
+      f-lighten(
+        $middle,
+        math.div((0 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))
+      ),
+    level10:
+      f-lighten(
+        $middle,
+        math.div((0.1 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))
+      ),
+    level20:
+      f-lighten(
+        $middle,
+        math.div((0.2 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))
+      ),
+    level30:
+      f-lighten(
+        $middle,
+        math.div((0.3 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))
+      ),
+    level40:
+      f-lighten(
+        $middle,
+        math.div((0.4 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))
+      ),
+    level50:
+      f-lighten(
+        $middle,
+        math.div((0.5 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))
+      ),
     level60: $middle,
-    level70: f-lighten($middle, math.div(((0.7 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.1), map.get(f-rgb-to-oklab($middle), l))),
-    level80: f-lighten($middle, math.div(((0.8 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * math.sqrt(0.03)), map.get(f-rgb-to-oklab($middle), l))),
-    level90: f-lighten($middle, math.div(((0.9 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.2667), map.get(f-rgb-to-oklab($middle), l))),
-    level95: f-lighten($middle, math.div(((0.95 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.3), map.get(f-rgb-to-oklab($middle), l))),
-    level99: f-lighten($middle, math.div(((0.99 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.325), map.get(f-rgb-to-oklab($middle), l))),
-    level100: f-lighten($middle, math.div(((1.0 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * math.div(1,3)), map.get(f-rgb-to-oklab($middle), l))),
+    level70:
+      f-lighten(
+        $middle,
+        math.div(
+          ((0.7 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.1),
+          map.get(f-rgb-to-oklab($middle), l)
+        )
+      ),
+    level80:
+      f-lighten(
+        $middle,
+        math.div(
+          (
+            (0.8 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) *
+              math.sqrt(0.03)
+          ),
+          map.get(f-rgb-to-oklab($middle), l)
+        )
+      ),
+    level90:
+      f-lighten(
+        $middle,
+        math.div(
+          ((0.9 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.2667),
+          map.get(f-rgb-to-oklab($middle), l)
+        )
+      ),
+    level95:
+      f-lighten(
+        $middle,
+        math.div(
+          ((0.95 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.3),
+          map.get(f-rgb-to-oklab($middle), l)
+        )
+      ),
+    level99:
+      f-lighten(
+        $middle,
+        math.div(
+          ((0.99 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.325),
+          map.get(f-rgb-to-oklab($middle), l)
+        )
+      ),
+    level100:
+      f-lighten(
+        $middle,
+        math.div(
+          ((1 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * math.div(1, 3)),
+          map.get(f-rgb-to-oklab($middle), l)
+        )
+      )
   );
 }
 
@@ -337,12 +433,12 @@ $sys-light: (
   onSurface: map.get($ref-mono, level10),
   surfaceVariant: map.get($ref-gray, level90),
   onSurfaceVariant: map.get($ref-gray, level30),
-  surfaceContainerHighest: map.get($ref-mono,level90),
-  surfaceContainerHigh: map.get($ref-mono,level90),
-  surfaceContainer: map.get($ref-mono,level95),
-  surfaceContainerLow: map.get($ref-mono,level95),
-  surfaceContainerLowest: map.get($ref-mono,level100),
-  surfaceDim: map.get($ref-mono,level90),
+  surfaceContainerHighest: map.get($ref-mono, level90),
+  surfaceContainerHigh: map.get($ref-mono, level90),
+  surfaceContainer: map.get($ref-mono, level95),
+  surfaceContainerLow: map.get($ref-mono, level95),
+  surfaceContainerLowest: map.get($ref-mono, level100),
+  surfaceDim: map.get($ref-mono, level90),
   surfaceBright: map.get($ref-mono, level99),
 ) !default;
 
@@ -418,9 +514,9 @@ $brandColors: (
   lightTint: f-lighten(map.get($colorLabels, myPrimary), 0.15),
   lightMiddle: map.get($colorLabels, myPrimary),
   lightShade: f-darken(map.get($colorLabels, myPrimary), 0.15),
-  darkTint: f-lighten(f-lighten(map.get($colorLabels, myPrimary),0.4), 0.15),
-  darkMiddle: f-lighten(map.get($colorLabels, myPrimary),0.4),
-  darkShade: f-darken(f-lighten(map.get($colorLabels, myPrimary),0.4), 0.15),
+  darkTint: f-lighten(f-lighten(map.get($colorLabels, myPrimary), 0.4), 0.15),
+  darkMiddle: f-lighten(map.get($colorLabels, myPrimary), 0.4),
+  darkShade: f-darken(f-lighten(map.get($colorLabels, myPrimary), 0.4), 0.15),
 ) !default;
 
 $semantic-light: (
@@ -466,7 +562,7 @@ $semantic-dark: (
   text-placeholder: map.get($sys-dark, onSurface),
   text-on-fill: map.get($sys-dark, onPrimary),
   text-link: map.get($sys-dark, primary),
-  text-hover: color.mix(map.get($sys-dark, primary),map.get($sys-light, onContainer), 85%),
+  text-hover: color.mix(map.get($sys-dark, primary), map.get($sys-light, onContainer), 85%),
   text-active: map.get($sys-dark, primary),
   text-visited: map.get($sys-dark, visited),
   text-alert: map.get($sys-dark, error),
@@ -476,7 +572,7 @@ $semantic-dark: (
   icon-alert: map.get($sys-dark, error),
   icon-disabled: map.get($sys-dark, onSurface),
   button-normal: map.get($sys-dark, primary),
-  button-hover: color.mix(map.get($sys-dark, primary),map.get($sys-light, onContainer), 85%),
+  button-hover: color.mix(map.get($sys-dark, primary), map.get($sys-light, onContainer), 85%),
   button-active: map.get($sys-dark, primary),
   button-disabled: map.get($sys-dark, onSurface),
   border-field: map.get($sys-dark, onContainer),

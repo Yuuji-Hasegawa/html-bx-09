@@ -24,7 +24,7 @@
   width: calc(100% - setting.f-space-px(m));
   height: 1px;
   background: var(--c-text-description);
-  transition: all ease-out .3s;
+  transition: all ease-out 0.3s;
 
   &::before,
   &::after {
@@ -34,7 +34,7 @@
     height: 1px;
     content: "";
     background-color: var(--c-text-description);
-    transition: all ease-out .3s;
+    transition: all ease-out 0.3s;
   }
 
   &::before {
@@ -71,7 +71,7 @@
   overflow-y: auto;
   pointer-events: none;
   background: var(--c-bg-qua);
-  transition: right .1s ease-out;
+  transition: right 0.1s ease-out;
 
   &__header {
     display: flex;
@@ -82,7 +82,7 @@
   &--is-open {
     right: 0;
     pointer-events: auto;
-    transition: right .1s ease-out;
+    transition: right 0.1s ease-out;
   }
 }
 
@@ -109,15 +109,15 @@
   pointer-events: none;
   cursor: pointer;
   visibility: hidden;
-  background: rgba(map.get(setting.$sys-light,scrim), 0.5);
+  background: rgba(map.get(setting.$sys-light, scrim), 0.5);
   opacity: 0;
-  transition: opacity .1s ease-out;
+  transition: opacity 0.1s ease-out;
 
   .c-sidebar--is-open + & {
     display: block;
     pointer-events: auto;
     visibility: visible;
     opacity: 1;
-    transition: opacity .1s ease-out;
+    transition: opacity 0.1s ease-out;
   }
 }

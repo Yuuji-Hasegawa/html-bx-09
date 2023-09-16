@@ -36,7 +36,7 @@
       position: absolute;
       top: 50%;
       right: 1em;
-      transition: transform .1s ease-out;
+      transition: transform 0.1s ease-out;
       transform: translateY(-50%);
 
       .o-box[open] & {

@@ -9,7 +9,8 @@
 
 .c-disc-list {
   &--toc {
-    padding: setting.f-space-px(m) setting.f-space-px(m) setting.f-space-px(m) calc(setting.f-space-px(s) + setting.f-space-em(l));
+    padding: setting.f-space-px(m) setting.f-space-px(m) setting.f-space-px(m)
+      calc(setting.f-space-px(s) + setting.f-space-em(l));
   }
 }
 

@@ -9,7 +9,7 @@
     inset: 0;
     z-index: 1;
     content: "";
-    background: rgba(map.get(setting.$sys-light,scrim), 0.5);
+    background: rgba(map.get(setting.$sys-light, scrim), 0.5);
   }
 }
 
