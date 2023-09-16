@@ -1,0 +1,123 @@
+@use "../settings" as setting;
+@use "../tools" as tool;
+@use "sass:map";
+
+.c-header {
+  display: flex;
+  align-items: center;
+  padding-top: setting.f-space-px(xs);
+  padding-bottom: setting.f-space-px(xs);
+  background: var(--c-bg-qua);
+  border-bottom: solid 1px var(--c-border-divider);
+}
+
+.c-pc-nav {
+  margin-left: auto;
+
+  @include tool.max-screen(setting.$underm) {
+    display: none;
+  }
+}
+
+.c-menu-bars {
+  position: relative;
+  width: calc(100% - setting.f-space-px(m));
+  height: 1px;
+  background: var(--c-text-description);
+  transition: all ease-out .3s;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: var(--c-text-description);
+    transition: all ease-out .3s;
+  }
+
+  &::before {
+    top: -9px;
+  }
+
+  &::after {
+    top: 9px;
+  }
+
+  .is-open & {
+    background: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.c-sidebar {
+  position: fixed;
+  top: 0;
+  right: -240px;
+  z-index: 999;
+  width: 100%;
+  max-width: 240px;
+  height: 100svh;
+  overflow-y: auto;
+  pointer-events: none;
+  background: var(--c-bg-qua);
+  transition: right .1s ease-out;
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px clamp(setting.f-space-px(m), setting.breakpoints(overs), setting.f-space-px(xl));
+  }
+
+  &--is-open {
+    right: 0;
+    pointer-events: auto;
+    transition: right .1s ease-out;
+  }
+}
+
+.c-gnav {
+  &-item {
+    &:first-of-type {
+      border-top: solid 1px var(--c-border-divider);
+    }
+
+    border-bottom: solid 1px var(--c-border-divider);
+  }
+
+  &-link {
+    display: block;
+    padding: setting.f-space-px(s) setting.f-space-px(m);
+  }
+}
+
+.c-sidebar-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  display: none;
+  pointer-events: none;
+  cursor: pointer;
+  visibility: hidden;
+  background: rgba(map.get(setting.$sys-light,scrim), 0.5);
+  opacity: 0;
+  transition: opacity .1s ease-out;
+
+  .c-sidebar--is-open + & {
+    display: block;
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .1s ease-out;
+  }
+}

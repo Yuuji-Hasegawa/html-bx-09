@@ -1,0 +1,108 @@
+@use "../settings" as setting;
+@use "../tools" as tool;
+
+.c-heading,
+.c-sec-heading,
+.c-ter-heading,
+.c-qua-heading,
+.c-qui-heading,
+.c-sen-heading,
+.c-display-2xl,
+.c-display-xl,
+.c-display-l,
+.c-display-m,
+.c-display-s,
+.c-display-xs,
+.c-display-2xs {
+  font-weight: setting.f-fontweight(r);
+  line-height: setting.f-lineheight(m);
+  letter-spacing: setting.f-letterspacing(m);
+
+  @include tool.max-screen(setting.$unders) {
+    font-weight: setting.f-fontweight(m);
+  }
+}
+
+.c-display-2xl,
+.c-display-xl,
+.c-heading,
+.c-display-l {
+  @include tool.min-screen(setting.$breaks) {
+    line-height: setting.f-lineheight(s);
+  }
+}
+
+.c-display-2xl {
+  font-size: clamp(setting.f-font-remsize(5xl), (setting.breakpoints(overs)), setting.f-font-remsize(6xl));
+}
+
+.c-display-xl {
+  font-size: clamp(setting.f-font-remsize(4xl), (setting.breakpoints(overs)), setting.f-font-remsize(5xl));
+}
+
+.c-heading,
+.c-display-l {
+  font-size: clamp(setting.f-font-remsize(3xl), (setting.breakpoints(overs)), setting.f-font-remsize(4xl));
+}
+
+.c-heading,
+.c-sec-heading,
+.c-entry h2 {
+  margin-top: setting.f-space-rem(2xl);
+
+  & + * {
+    margin-top: setting.f-space-rem(l);
+  }
+}
+
+.c-sec-heading,
+.c-entry h2,
+.c-display-m {
+  font-size: clamp(setting.f-font-remsize(2xl), (setting.breakpoints(overs)), setting.f-font-remsize(3xl));
+}
+
+.c-ter-heading,
+.c-entry h3,
+.c-display-s {
+  font-size: clamp(setting.f-font-remsize(xl), (setting.breakpoints(overs)), setting.f-font-remsize(2xl));
+}
+
+.c-ter-heading,
+.c-entry h3 {
+  margin-top: setting.f-space-rem(xl);
+
+  & + * {
+    margin-top: setting.f-space-rem(l);
+  }
+}
+
+.c-qua-heading,
+.c-display-xs {
+  font-size: clamp(setting.f-font-remsize(l), (setting.breakpoints(overs)), setting.f-font-remsize(xl));
+}
+
+.c-qui-heading,
+.c-display-2xs {
+  font-size: clamp(setting.f-font-remsize(m), (setting.breakpoints(overs)), setting.f-font-remsize(l));
+
+  @include tool.max-screen(setting.$unders) {
+    line-height: setting.f-lineheight(l);
+  }
+}
+
+.c-qua-heading,
+.c-qui-heading {
+  margin-top: setting.f-space-rem(xl);
+
+  & + * {
+    margin-top: setting.f-space-rem(m);
+  }
+}
+
+.c-sen-heading {
+  margin-top: setting.f-space-rem(l);
+
+  & + * {
+    margin-top: setting.f-space-rem(m);
+  }
+}

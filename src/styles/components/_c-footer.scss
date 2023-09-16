@@ -1,0 +1,15 @@
+@use "../settings" as setting;
+
+.c-footer {
+  position: sticky;
+  top: 100svh;
+}
+
+.c-oneline-form {
+  display: flex;
+  gap: setting.f-space-px(m);
+
+  & > button {
+    flex-shrink: 0;
+  }
+}

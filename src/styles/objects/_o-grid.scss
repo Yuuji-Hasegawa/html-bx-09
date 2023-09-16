@@ -1,0 +1,41 @@
+@use "../settings" as setting;
+
+.o-grid {
+  display: grid;
+
+  --gutter: #{setting.f-space-px(l)};
+
+  &--gap-XL {
+    --gutter: #{setting.f-space-px(xl)};
+  }
+
+  gap: var(--gutter);
+
+  &--tri {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(
+        clamp(
+          clamp((100% - var(--gutter) * 2) / 3, setting.breakpoints(underm), (50% - var(--gutter) * 0.5)),
+          setting.breakpoints(underm),
+          clamp((50% - var(--gutter) * 0.5), setting.breakpoints(unders), 100%)
+        ),
+        1fr
+      )
+    );
+  }
+
+  &--quart {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(
+        clamp(
+          clamp((100% - var(--gutter) * 3) / 4, setting.breakpoints(underm), (50% - var(--gutter) * 0.5)),
+          setting.breakpoints(underm),
+          clamp((50% - var(--gutter) * 0.5), setting.breakpoints(unders), 100%)
+        ),
+        1fr
+      )
+    );
+  }
+}

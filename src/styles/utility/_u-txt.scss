@@ -1,0 +1,98 @@
+@use "../settings" as setting;
+
+@mixin txtSize() {
+  @each $key, $name in setting.$fontRemSize {
+    @if $key == s or $key == m or $key == l {
+      .u-txt-size-#{$key} {
+        font-size: $name;
+      }
+    }
+  }
+}
+
+@mixin txtWeight() {
+  @each $key, $name in setting.$fontWeight {
+    @if $key == m or $key == b {
+      .u-txt-weight-#{$key} {
+        font-weight: $name;
+      }
+    }
+  }
+}
+
+@mixin lineHeight() {
+  @each $key, $name in setting.$lineHeight {
+    @if $key != reset {
+      .u-lineHeight-#{$key} {
+        line-height: $name;
+      }
+    }
+  }
+}
+
+@include txtSize;
+@include txtWeight;
+@include lineHeight;
+
+.u-font-en {
+  font-family: setting.$font-family-en;
+}
+
+.u-font-en-con {
+  font-family: setting.$font-family-en-condensed;
+}
+
+.u-txt-dimmed {
+  color: var(--c-text-description);
+}
+
+.u-txt-brand {
+  color: var(--c-brand-middle);
+}
+
+.u-txt-accent {
+  color: var(--c-status-alert);
+}
+
+.u-txt-alert {
+  color: var(--c-warning);
+}
+
+.u-txt-center {
+  text-align: center;
+}
+
+.u-txt-right {
+  text-align: right;
+}
+
+.u-txt-break {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.u-txt-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5em;
+  text-decoration-color: rgb(var(--c-warning) 0.4);
+  text-underline-offset: -0.2em;
+  text-decoration-skip-ink: none;
+}
+
+.u-text-trim {
+  display: -webkit-box;
+
+  --trim: 1;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--trim);
+  overflow: hidden;
+
+  &--two-line {
+    --trim: 2;
+  }
+
+  &--three-line {
+    --trim: 3;
+  }
+}

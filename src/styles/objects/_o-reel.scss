@@ -1,0 +1,15 @@
+@use "../settings" as setting;
+
+.o-reel {
+  display: flex;
+  gap: setting.f-space-px(m);
+  overflow: auto hidden;
+
+  &--breadcrumb {
+    padding-bottom: setting.f-space-px(s);
+  }
+
+  & > * {
+    flex: 0 0 auto;
+  }
+}

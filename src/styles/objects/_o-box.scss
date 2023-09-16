@@ -1,0 +1,276 @@
+@use "sass:map";
+@use "sass:color";
+@use "../settings" as setting;
+@use "../tools" as tool;
+
+.o-box {
+  border: solid 1px;
+  outline: 1px transparent;
+  outline-offset: -1px;
+  transition: all 0.25s ease;
+
+  &--cta {
+    padding-bottom: 4rem;
+    color: var(--c-text-on-fill);
+    background: var(--c-button-normal);
+    border-color: transparent;
+  }
+
+  &--bordered {
+    border: solid 1px var(--c-border-field);
+  }
+
+  &--entry,
+  &--bg-fill {
+    background: var(--c-bg-qua);
+  }
+
+  &--entry {
+    padding-bottom: setting.f-space-rem(2xl);
+    border-color: transparent;
+    box-shadow: 0 0 1px var(--c-border-field);
+  }
+
+  &--bg-fill {
+    color: var(--c-button-normal);
+  }
+
+  &--toc {
+    padding: setting.f-space-px(s) setting.f-space-px(m);
+  }
+
+  &--ghost-button {
+    padding: setting.f-space-px(xs) setting.f-space-px(s);
+    color: var(--c-text-placeholder);
+    background: var(--c-bg-tertiary);
+    border-radius: setting.f-border-radius(s);
+    transition: all 0.25s ease;
+  }
+
+  &--ghost-button,
+  &--blog-card,
+  &--blog-embed {
+    border-color: var(--c-border-divider);
+
+    &:hover,
+    &:focus {
+      border-color: color-mix(in oklab, var(--c-button-normal),map.get(setting.$sys-light, onContainer) 15%);
+    }
+
+    &:focus {
+      outline-style: solid;
+      outline-color: var(--c-button-normal);
+    }
+  }
+
+  &--blog-card {
+    height: 100%;
+  }
+
+  &--blog-embed {
+    padding: setting.f-space-px(m);
+  }
+
+  &--card-inner {
+    padding: setting.f-space-px(l) clamp(setting.f-space-px(s), setting.breakpoints(overm), setting.f-space-px(m));
+    border-color: transparent;
+  }
+
+  &--button {
+    font-size: setting.f-font-remsize(m);
+    font-weight: setting.f-fontweight(b);
+    line-height: setting.f-lineheight(m);
+    color: var(--c-text-description);
+    letter-spacing: setting.f-letterspacing(m);
+    cursor: pointer;
+    background: var(--c-bg-secondary);
+    border-color: var(--c-bg-secondary);
+    border-radius: setting.f-border-radius(s);
+    transition: all 0.25s ease;
+
+    &:hover,
+    &:focus {
+      background-color: color-mix(in oklab,var(--c-bg-secondary),map.get(setting.$sys-light, onContainer) 15%);
+      border-color: color-mix(in oklab, var(--c-bg-secondary),map.get(setting.$sys-light, onContainer) 15%);
+    }
+
+    &:focus {
+      outline-style: solid;
+      outline-color: var(--c-text-description);
+    }
+  }
+
+  &--cat,
+  &--primary-button {
+    color: var(--c-text-on-fill);
+    background-color: var(--c-button-normal);
+  }
+
+  &--cat {
+    padding: setting.f-space-em(2xs) setting.f-space-em(s);
+    font-size: setting.f-font-remsize(3xs);
+    font-weight: setting.f-fontweight(m);
+    line-height: setting.f-lineheight(s);
+    letter-spacing: setting.f-letterspacing(m);
+    border-color: transparent;
+    border-radius: setting.f-font-emsize(m);
+  }
+
+  &--primary-button {
+    &:hover,
+    &:focus {
+      background-color: color-mix(in oklab,var(--c-button-normal),map.get(setting.$sys-light, onContainer) 15%);
+      border-color: color-mix(in oklab, var(--c-button-normal),map.get(setting.$sys-light, onContainer) 15%);
+    }
+  }
+
+  &--danger-button {
+    color: var(--c-text-on-fill);
+    background-color: var(--c-text-alert);
+
+    &:hover,
+    &:focus {
+      background-color: color-mix(in oklab,var(--c-text-alert),map.get(setting.$sys-light, onContainer) 15%);
+      border-color: color-mix(in oklab, var(--c-text-alert),map.get(setting.$sys-light, onContainer) 15%);
+    }
+  }
+
+  &:disabled {
+    color: var(--c-text-placeholder);
+    cursor: not-allowed;
+    background-color: var(--c-bg-tertiary);
+    border-color: var(--c-border-disabled);
+  }
+
+  &--rect-button {
+    display: inline-flex;
+    padding: setting.f-space-px(s) setting.f-space-px(m);
+  }
+
+  &--square-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: calc(setting.f-space-px(xl) + setting.f-space-px(xs));
+    aspect-ratio: #{setting.f-aspect(square)};
+  }
+
+  &--thead,
+  &--tbody {
+    padding: setting.f-space-px(s) setting.f-space-px(m);
+    border-color: var(--c-border-field);
+  }
+
+  &--thead {
+    flex-basis: 260px;
+    flex-grow: 1;
+    color: var(--c-text-description);
+    background: var(--c-bg-secondary);
+    border-width: 1px clamp(0px,setting.breakpoints(underm),1px) 0 1px;
+
+    &:last-of-type {
+      border-bottom-width: clamp(0px,setting.breakpoints(overm),1px);
+    }
+  }
+
+  &--tbody {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: clamp(calc(100% - 260px),setting.breakpoints(underm),100%);
+    border-width: 1px 1px 0;
+
+    &:last-of-type {
+      border-bottom-width: 1px;
+    }
+  }
+
+  &--input {
+    padding: setting.f-space-px(s);
+    color: var(--c-text-placeholder);
+    resize: none;
+    background: var(--c-bg-qua);
+    border-color: var(--c-border-divider);
+    border-radius: setting.f-border-radius(s);
+
+    @include tool.placeholder(var(--c-text-placeholder));
+
+    &:focus {
+      outline-style: solid;
+      outline-color: var(--c-border-selected);
+    }
+  }
+
+  &--full-wide {
+    width: 100%;
+  }
+
+  &--radio,
+  &--checkbox {
+    position: relative;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    background: var(--c-bg-qua);
+    border-color: var(--c-border-divider);
+
+    .o-icon-parent--form-item:hover &,
+    &:focus {
+      outline-style: solid;
+      outline-color: var(--c-border-selected);
+    }
+
+    &:checked {
+      background: var(--c-brand-middle);
+
+      &::after {
+        position: absolute;
+        content: "";
+      }
+    }
+  }
+
+  &--radio {
+    border-radius: 50%;
+
+    &::after {
+      top: 50%;
+      left: 50%;
+      width: setting.f-space-em(xs);
+      height: setting.f-space-em(xs);
+      background: var(--c-bg-qua);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &--checkbox {
+    border-radius: setting.f-border-radius(s);
+
+    &:checked {
+      &::after {
+        top: calc(50% - 2px);
+        left: 50%;
+        width: setting.f-font-emsize(2xs);
+        height: calc(setting.f-font-emsize(2xs) / 2);
+        border-color: var(--c-bg-qua);
+        border-style: solid;
+        border-width: 0 0 2px 2px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &--share {
+    padding-left: calc(setting.f-space-em(m) + setting.f-space-px(m));
+  }
+
+  &--menu-btn {
+    margin-left: auto;
+    background: transparent;
+    border-color: var(--c-border-divider);
+
+    @include tool.min-screen(setting.$breakm) {
+      display: none;
+    }
+  }
+}

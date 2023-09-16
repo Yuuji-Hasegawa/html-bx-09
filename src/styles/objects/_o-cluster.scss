@@ -1,0 +1,19 @@
+@use "../settings" as setting;
+
+.o-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: setting.f-space-px(m);
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--middle {
+    align-items: center;
+  }
+
+  &--pager {
+    gap: setting.f-space-px(s);
+  }
+}

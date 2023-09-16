@@ -1,0 +1,108 @@
+@use "sass:map";
+@use "sass:math";
+
+@function f-width($key) {
+  @return map.get($sizes, $key);
+}
+
+$contentWrapper: 40em;
+$borderRadiusBase: 8px;
+$borderRadiusRatio: 1.618;
+$borderRadius: (
+  s: math.div($borderRadiusBase, $borderRadiusRatio),
+  m: $borderRadiusBase * 1,
+  l: $borderRadiusBase * 2,
+) !default;
+
+@function f-border-radius($key) {
+  @return map.get($borderRadius, $key);
+}
+
+$font: 16px;
+$wrap: 70;
+$content: 40;
+$sizes: (
+  content: math.round($font * $content),
+  wrapper: math.round($font * $wrap),
+) !default;
+$spacePxBase: 8px;
+$spaceRemBase: 0.5rem;
+$spaceEmBase: 0.5em;
+$spaceRatio: 1.618;
+$spacePx: (
+  3xs: math.div(math.div(math.div($spacePxBase, $spaceRatio), $spaceRatio), $spaceRatio),
+  2xs: math.div(math.div($spacePxBase, $spaceRatio), $spaceRatio),
+  xs: math.div($spacePxBase, $spaceRatio),
+  s: $spacePxBase * 1,
+  m: $spacePxBase * 2,
+  l: $spacePxBase * 3,
+  xl: $spacePxBase * 5,
+  2xl: $spacePxBase * 8,
+  3xl: $spacePxBase * 13,
+  4xl: $spacePxBase * 21,
+) !default;
+$spaceRem: (
+  3xs: math.div(math.div(math.div($spaceRemBase, $spaceRatio), $spaceRatio), $spaceRatio),
+  2xs: math.div(math.div($spaceRemBase, $spaceRatio), $spaceRatio),
+  xs: math.div($spaceRemBase, $spaceRatio),
+  s: $spaceRemBase * 1,
+  m: $spaceRemBase * 2,
+  l: $spaceRemBase * 3,
+  xl: $spaceRemBase * 5,
+  2xl: $spaceRemBase * 8,
+  3xl: $spaceRemBase * 13,
+  4xl: $spaceRemBase * 21,
+) !default;
+$spaceEm: (
+  3xs: math.div(math.div(math.div($spaceEmBase, $spaceRatio), $spaceRatio), $spaceRatio),
+  2xs: math.div(math.div($spaceEmBase, $spaceRatio), $spaceRatio),
+  xs: math.div($spaceEmBase, $spaceRatio),
+  s: $spaceEmBase * 1,
+  m: $spaceEmBase * 2,
+  l: $spaceEmBase * 3,
+  xl: $spaceEmBase * 5,
+  2xl: $spaceEmBase * 8,
+  3xl: $spaceEmBase * 13,
+  4xl: $spaceEmBase * 21,
+) !default;
+
+@function f-space-px($key) {
+  @return map.get($spacePx, $key);
+}
+
+@function f-space-rem($key) {
+  @return map.get($spaceRem, $key);
+}
+
+@function f-space-em($key) {
+  @return map.get($spaceEm, $key);
+}
+
+$breaks: 521px;
+$breakm: 961px;
+$unders: $breaks - 1px;
+$underm: $breakm - 1px;
+$breakpoints: (
+  unders: calc(($unders - 100vw) * 999),
+  underm: calc(($underm - 100vw) * 999),
+  overs: calc((100vw - $unders) * 999),
+  overm: calc((100vw - $underm) * 999),
+) !default;
+
+@function breakpoints($key) {
+  @return map.get($breakpoints, $key);
+}
+
+$aspect: (
+  square: "1/1",
+  landscape: "3/2",
+  standard: "4/3",
+  wide: "16/9",
+  portrait: "2/3",
+  upright: "3/4",
+  skyscraper: "9/16",
+) !default;
+
+@function f-aspect($key) {
+  @return map.get($aspect, $key);
+}

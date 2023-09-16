@@ -1,0 +1,15 @@
+@use "../settings" as setting;
+
+.o-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @each $key, $name in setting.$spacePx {
+    &--#{$key} {
+      & > * + * {
+        margin-top: $name;
+      }
+    }
+  }
+}

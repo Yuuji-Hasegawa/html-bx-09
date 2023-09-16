@@ -1,0 +1,141 @@
+@use "../settings" as setting;
+
+.c-content-l,
+.c-content-m,
+.c-label-l,
+.c-label-m,
+.c-entry p,
+.c-card-link {
+  letter-spacing: setting.f-letterspacing(m);
+}
+
+.c-content-l,
+.c-content-m,
+.c-suppl-l,
+.c-suppl-m,
+.c-entry p,
+.c-card-link {
+  font-weight: setting.f-fontweight(r);
+  line-height: setting.f-lineheight(l);
+}
+
+.c-content-l,
+.c-entry p,
+.c-card-link {
+  font-size: setting.f-font-remsize(m);
+}
+
+.c-content-m,
+.c-label-l {
+  font-size: setting.f-font-remsize(s);
+}
+
+.c-label-l,
+.c-label-m {
+  font-weight: setting.f-fontweight(m);
+}
+
+.c-label-m {
+  font-size: setting.f-font-remsize(xs);
+}
+
+.c-suppl-l,
+.c-suppl-m {
+  letter-spacing: setting.f-letterspacing(s);
+}
+
+.c-suppl-l {
+  font-size: setting.f-font-remsize(xs);
+}
+
+.c-suppl-m {
+  font-size: setting.f-font-remsize(2xs);
+}
+
+.c-notes {
+  padding-left: calc(setting.f-space-em(s) + setting.f-space-em(xs));
+  text-indent: calc(-1 * (setting.f-space-em(s) + setting.f-space-em(xs)));
+
+  &::before {
+    margin-right: setting.f-space-em(xs);
+    content: "*";
+  }
+}
+
+.c-number-text {
+  font-family: setting.$font-family-en;
+}
+
+.c-number-text-variant {
+  font-family: setting.$font-family-en-condensed;
+}
+
+.c-entry a,
+.c-text-link {
+  color: var(--c-text-link);
+  text-decoration: underline;
+  transition: all 0.25s ease;
+
+  &:visited {
+    color: var(--c-text-visited);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--c-text-hover);
+    text-decoration: none;
+  }
+}
+
+.c-text-link {
+  &--no-underline {
+    text-decoration: none;
+  }
+
+  &--full-wide {
+    display: block;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+.c-card-link {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--c-text-body);
+  transition: all 0.25s ease;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--trim);
+
+  --trim: 2;
+
+  &--one-line {
+    --trim: 1;
+  }
+
+  .o-box--blog-card:visited & {
+    color: var(--c-text-visited);
+  }
+
+  .o-box--blog-card:hover &,
+  .o-box--blog-card:focus & {
+    color: var(--c-text-hover);
+  }
+}
+
+.c-share-parent {
+  position: relative;
+
+  .o-icon {
+    position: absolute;
+    top: 50%;
+    left: setting.f-space-em(m);
+    transform: translateY(-50%);
+  }
+}
+
+.c-author-name {
+  display: table;
+  width: min(setting.breakpoints(overs),100%);
+  min-width: max-content;
+}

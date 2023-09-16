@@ -1,0 +1,86 @@
+@use "../settings" as setting;
+@use "../tools" as tool;
+
+.o-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: #{setting.f-aspect(wide)};
+  overflow: hidden;
+
+  &--square,
+  &--round {
+    aspect-ratio: #{setting.f-aspect(square)};
+  }
+
+  &--landscape {
+    aspect-ratio: #{setting.f-aspect(landscape)};
+  }
+
+  &--standard {
+    aspect-ratio: #{setting.f-aspect(standard)};
+  }
+
+  &--portrait {
+    aspect-ratio: #{setting.f-aspect(portrait)};
+  }
+
+  &--upright {
+    aspect-ratio: #{setting.f-aspect(upright)};
+  }
+
+  &--skyscraper {
+    aspect-ratio: #{setting.f-aspect(skyscraper)};
+  }
+
+  &--switch-s {
+    aspect-ratio: #{setting.f-aspect(landscape)};
+
+    @include tool.portrait {
+      aspect-ratio: #{setting.f-aspect(portrait)};
+    }
+  }
+
+  &--switch-m {
+    aspect-ratio: #{setting.f-aspect(standard)};
+
+    @include tool.portrait {
+      aspect-ratio: #{setting.f-aspect(upright)};
+    }
+  }
+
+  &--switch-l {
+    aspect-ratio: #{setting.f-aspect(wide)};
+
+    @include tool.portrait {
+      aspect-ratio: #{setting.f-aspect(skyscraper)};
+    }
+  }
+
+  &--no-color {
+    > * {
+      filter: grayscale(100%);
+    }
+  }
+
+  > * {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  &--round > * {
+    border-radius: 50%;
+  }
+
+  > source,
+  > img,
+  > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    color: transparent;
+  }
+}

@@ -1,0 +1,57 @@
+@use "../settings" as setting;
+
+.c-entry > ul,
+.c-disc-list {
+  padding-left: setting.f-space-em(l);
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+.c-disc-list {
+  &--toc {
+    padding: setting.f-space-px(m) setting.f-space-px(m) setting.f-space-px(m) calc(setting.f-space-px(s) + setting.f-space-em(l));
+  }
+}
+
+.c-count-list,
+.c-entry > ol {
+  counter-set: primarycount;
+
+  & > li {
+    position: relative;
+    padding-left: calc(2 * setting.f-space-em(m));
+    counter-increment: primaryCount;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: setting.$font-family-en-condensed;
+      content: counter(primaryCount, decimal-leading-zero) ".";
+    }
+  }
+
+  ol {
+    padding-left: 0;
+  }
+}
+
+.c-count-list--secondary,
+.c-entry > ol > ol {
+  counter-set: secondarycount;
+
+  & > li {
+    padding-left: calc(setting.f-space-em(l) + setting.f-space-em(m));
+    counter-increment: SecondaryCount;
+
+    &::before {
+      content: "(" counter(SecondaryCount, decimal-leading-zero) ")";
+    }
+  }
+}
+
+.c-breadcrumb-item:not(:last-of-type)::after {
+  display: inline-block;
+  margin-left: setting.f-space-px(m);
+  content: "\203A";
+}

@@ -1,0 +1,87 @@
+@use "../settings" as setting;
+@use "../tools" as tool;
+
+*:where(:not(iframe, canvas, img, svg, video, svg *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+:root {
+  @each $key, $name in setting.$semantic-light {
+    --c-#{$key}: #{($name)};
+  }
+
+  @include tool.darkmode {
+    @each $key, $name in setting.$semantic-dark {
+      --c-#{$key}: #{($name)};
+    }
+  }
+
+  font-family: setting.$font-family;
+  font-feature-settings: "pkna";
+  line-height: setting.f-lineheight(m);
+  color: var(--c-text-body);
+  color-scheme: light dark;
+  background-color: var(--c-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  min-height: 100svh;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+p {
+  & + * {
+    margin-top: setting.f-space-rem(l);
+  }
+}
+
+b,
+strong {
+  font-weight: setting.f-fontweight(b);
+}
+
+small {
+  font-size: setting.f-font-remsize(xs);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+svg {
+  width: auto;
+  height: 1em;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}

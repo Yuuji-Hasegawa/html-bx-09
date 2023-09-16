@@ -1,0 +1,208 @@
+@use "sass:map";
+@use "sass:math";
+
+$fontRemBase: 1rem;
+$fontEmBase: 1em;
+$numerator: 8;
+$fontRemSize: (
+  6xs: $fontRemBase * math.div($numerator, $numerator + 7),
+  5xs: $fontRemBase * math.div($numerator, $numerator + 6),
+  4xs: $fontRemBase * math.div($numerator, $numerator + 5),
+  3xs: $fontRemBase * math.div($numerator, $numerator + 4),
+  2xs: $fontRemBase * math.div($numerator, $numerator + 3),
+  xs: $fontRemBase * math.div($numerator, $numerator + 2),
+  s: $fontRemBase * math.div($numerator, $numerator + 1),
+  m: $fontRemBase * math.div($numerator, $numerator),
+  l: $fontRemBase * math.div($numerator, $numerator - 1),
+  xl: $fontRemBase * math.div($numerator, $numerator - 2),
+  2xl: $fontRemBase * math.div($numerator, $numerator - 3),
+  3xl: $fontRemBase * math.div($numerator, $numerator - 4),
+  4xl: $fontRemBase * math.div($numerator, $numerator - 5),
+  5xl: $fontRemBase * math.div($numerator, $numerator - 6),
+  6xl: $fontRemBase * math.div($numerator, $numerator - 7),
+) !default;
+$fontEmSize: (
+  6xs: $fontEmBase * math.div($numerator, $numerator + 7),
+  5xs: $fontEmBase * math.div($numerator, $numerator + 6),
+  4xs: $fontEmBase * math.div($numerator, $numerator + 5),
+  3xs: $fontEmBase * math.div($numerator, $numerator + 4),
+  2xs: $fontEmBase * math.div($numerator, $numerator + 3),
+  xs: $fontEmBase * math.div($numerator, $numerator + 2),
+  s: $fontEmBase * math.div($numerator, $numerator + 1),
+  m: $fontEmBase * math.div($numerator, $numerator),
+  l: $fontEmBase * math.div($numerator, $numerator - 1),
+  xl: $fontEmBase * math.div($numerator, $numerator - 2),
+  2xl: $fontEmBase * math.div($numerator, $numerator - 3),
+  3xl: $fontEmBase * math.div($numerator, $numerator - 4),
+  4xl: $fontEmBase * math.div($numerator, $numerator - 5),
+  5xl: $fontEmBase * math.div($numerator, $numerator - 6),
+  6xl: $fontEmBase * math.div($numerator, $numerator - 7),
+) !default;
+
+@function f-font-remsize($key) {
+  @return map.get($fontRemSize, $key);
+}
+
+@function f-font-emsize($key) {
+  @return map.get($fontEmSize, $key);
+}
+
+$fontWeight: (
+  r: 400,
+  m: 500,
+  b: 700,
+) !default;
+
+@function f-fontweight($key) {
+  @return map.get($fontWeight, $key);
+}
+
+$lineHeightBase: 1.5;
+$lineHeight: (
+  none: 1,
+  s: $lineHeightBase * math.div($numerator, $numerator + 1),
+  m: $lineHeightBase * math.div($numerator, $numerator),
+  l: $lineHeightBase * math.div($numerator, $numerator - 1),
+) !default;
+
+@function f-lineheight($key) {
+  @return map.get($lineHeight, $key);
+}
+
+$letterSpacing: (
+  s: 0.02em,
+  m: 0.04em,
+) !default;
+
+@function f-letterspacing($key) {
+  @return map.get($letterSpacing, $key);
+}
+
+$font-family: "YakuHanJP_Narrow",
+  -apple-system,
+  blinkmacsystemfont,
+  "Segoe UI",
+  roboto,
+  "Hiragino Sans",
+  "Noto Sans CJK JP",
+  "Original Yu Gothic",
+  "Yu Gothic",
+  sans-serif;
+$font-family-en: "OpenSans", sans-serif;
+$font-family-en-condensed: "OpenSans Condensed", sans-serif;
+
+/*!
+ * OpenSans is licensed under the SIL Open Font License, Version 1.1.
+ * http://scripts.sil.org/OFL
+ * I have converted my OpenSans font(https://fonts.google.com/specimen/OpenSans) from ttf to woff2.
+ * Yaku Han JP v3.4.1 (OFL-1.1 AND MIT) by Qrac
+ * Type: YakuHanJP_Narrow - Based on Noto Sans CJK JP
+ */
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 100;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 200;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 300;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 400;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: bold;
+  src: local("Yu Gothic Bold");
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/OpenSans-Medium.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/OpenSans-Bold.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "OpenSans Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/OpenSans_Condensed-Regular.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "OpenSans Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/OpenSans_Condensed-Medium.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "OpenSans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/OpenSans_Condensed-Bold.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "YakuHanJP_Narrow";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/YakuHanJP-Regular.woff2") format("woff2");
+  font-display: optional;
+  unicode-range: U+3001, U+3002, U+3008, U+3009, U+300a, U+300b, U+300c, U+300d, U+300e, U+300f, U+3010, U+3011, U+3014,
+    U+3015, U+30fb, U+ff01, U+ff08, U+ff09, U+ff1a, U+ff1b, U+ff1f, U+ff3b, U+ff3d, U+ff5b, U+ff5d;
+}
+
+@font-face {
+  font-family: "YakuHanJP_Narrow";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/YakuHanJP-Medium.woff2") format("woff2");
+  font-display: optional;
+  unicode-range: U+3001, U+3002, U+3008, U+3009, U+300a, U+300b, U+300c, U+300d, U+300e, U+300f, U+3010, U+3011, U+3014,
+    U+3015, U+30fb, U+ff01, U+ff08, U+ff09, U+ff1a, U+ff1b, U+ff1f, U+ff3b, U+ff3d, U+ff5b, U+ff5d;
+}
+
+@font-face {
+  font-family: "YakuHanJP_Narrow";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/YakuHanJP-Bold.woff2") format("woff2");
+  font-display: optional;
+  unicode-range: U+3001, U+3002, U+3008, U+3009, U+300a, U+300b, U+300c, U+300d, U+300e, U+300f, U+3010, U+3011, U+3014,
+    U+3015, U+30fb, U+ff01, U+ff08, U+ff09, U+ff1a, U+ff1b, U+ff1f, U+ff3b, U+ff3d, U+ff5b, U+ff5d;
+}
