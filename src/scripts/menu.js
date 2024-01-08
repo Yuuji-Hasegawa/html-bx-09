@@ -36,7 +36,7 @@ export const menu = () => {
     }
   }
   btn.addEventListener("click", () => {
-      check();
+    check();
   });
   window.addEventListener("load", () => {
     init();

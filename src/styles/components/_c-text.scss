@@ -62,16 +62,19 @@
     content: "*";
   }
 }
+
 .c-gnav-link,
 .c-tel-link,
 .c-entry a,
 .c-text-link {
   transition: all 0.25s ease;
+
   &:hover,
   &:focus {
     color: var(--c-text-hover);
   }
 }
+
 .c-entry a,
 .c-text-link {
   color: var(--c-text-link);
@@ -80,9 +83,11 @@
     color: var(--c-text-visited);
   }
 }
+
 .c-entry a,
 .c-text-link--underline {
   text-decoration: underline;
+
   &:hover,
   &:focus {
     text-decoration: none;
@@ -98,9 +103,9 @@
 }
 
 .c-link-card {
-  transition: all 0.25s ease;
-  border-color: var(--c-border-divider);
   height: 100%;
+  border-color: var(--c-border-divider);
+  transition: all 0.25s ease;
 
   &:hover,
   &:focus {

@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 
   --gutter: #{setting.f-space-px(l)};
-  --growBase: #{setting.breakpoints(unders)};
+  --grow-base: #{setting.breakpoints(unders)};
 
   gap: var(--gutter);
 
@@ -55,7 +55,7 @@
   }
 
   &__wide {
-    min-width: min(setting.breakpoints(underm), 100%)
+    min-width: min(setting.breakpoints(underm), 100%);
   }
 
   &__footLeft {
@@ -69,8 +69,9 @@
   }
 
   &__grow {
+    flex-basis: var(--grow-base);
     flex-grow: 1;
-    flex-basis: var(--growBase);
+
     &--news {
       text-align: left;
     }

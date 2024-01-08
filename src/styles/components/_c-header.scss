@@ -3,17 +3,22 @@
 @use "sass:map";
 
 .c-header {
+  position: relative;
   display: flex;
   align-items: center;
   padding-top: clamp(setting.f-space-px(s), (setting.breakpoints(overm)), setting.f-space-px(m));
   padding-bottom: clamp(setting.f-space-px(s), (setting.breakpoints(overm)), setting.f-space-px(m));
-  position: relative;
 }
 
 .c-logo-label {
   &--header {
-    font-size: clamp(map.get(setting.$fontRemSize, 2xl), (setting.breakpoints(overm)), map.get(setting.$fontRemSize, 3xl));
+    font-size: clamp(
+      map.get(setting.$fontRemSize, 2xl),
+      (setting.breakpoints(overm)),
+      map.get(setting.$fontRemSize, 3xl)
+    );
   }
+
   &--footer {
     font-size: clamp(map.get(setting.$fontRemSize, l), (setting.breakpoints(overm)), map.get(setting.$fontRemSize, xl));
   }
@@ -70,36 +75,41 @@
 
 .c-gnav {
   @include tool.max-screen(setting.$underm) {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 9999;
+    display: none;
     width: 100%;
-    background: var(--c-bg-qua);
     padding-right: clamp(
       clamp(setting.f-space-px(m), setting.breakpoints(overm), setting.f-space-px(xl)),
       setting.breakpoints(overs),
       clamp(setting.f-space-px(xl), setting.breakpoints(overm), setting.f-space-px(3xl))
     );
+    padding-bottom: setting.f-space-px(l);
     padding-left: clamp(
       clamp(setting.f-space-px(m), setting.breakpoints(overm), setting.f-space-px(xl)),
       setting.breakpoints(overs),
       clamp(setting.f-space-px(xl), setting.breakpoints(overm), setting.f-space-px(3xl))
     );
-    padding-bottom: setting.f-space-px(l);
+    background: var(--c-bg-qua);
+
     &--is-open {
       display: block;
     }
+
     &-item {
       width: 100%;
     }
   }
+
   @include tool.min-screen(setting.$breakm) {
     margin-left: auto;
   }
+
   &-link {
-    color: currentColor;
+    color: currentcolor;
+
     @include tool.max-screen(setting.$underm) {
       display: block;
     }

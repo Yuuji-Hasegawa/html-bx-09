@@ -22,9 +22,9 @@
     padding: setting.f-space-px(xs) setting.f-space-px(s);
     color: var(--c-text-placeholder);
     background: var(--c-bg-tertiary);
+    border-color: var(--c-border-divider);
     border-radius: setting.f-border-radius(s);
     transition: all 0.25s ease;
-    border-color: var(--c-border-divider);
 
     &:hover,
     &:focus {
@@ -64,6 +64,7 @@
   &--primary-button {
     color: var(--c-text-on-fill);
     background-color: var(--c-button-normal);
+
     &:hover,
     &:focus {
       background-color: color-mix(in oklab, var(--c-button-normal), map.get(setting.$sys-light, onContainer) 15%);
@@ -209,6 +210,7 @@
     background: transparent;
     border-color: var(--c-border-divider);
   }
+
   &--round-label {
     padding: setting.f-space-em(2xs) setting.f-space-em(s);
     border-color: transparent;
