@@ -3,7 +3,7 @@
 @mixin txtSize() {
   @each $key, $name in setting.$fontRemSize {
     @if $key == s or $key == m or $key == l {
-      .u-txt-size-#{$key} {
+      .u-text-size-#{$key} {
         font-size: $name;
       }
     }
@@ -13,7 +13,7 @@
 @mixin txtWeight() {
   @each $key, $name in setting.$fontWeight {
     @if $key == m or $key == b {
-      .u-txt-weight-#{$key} {
+      .u-text-weight-#{$key} {
         font-weight: $name;
       }
     }
@@ -23,7 +23,7 @@
 @mixin lineHeight() {
   @each $key, $name in setting.$lineHeight {
     @if $key != reset {
-      .u-lineHeight-#{$key} {
+      .u-line-height-#{$key} {
         line-height: $name;
       }
     }
@@ -42,39 +42,47 @@
   font-family: setting.$font-family-en-condensed;
 }
 
-.u-txt-dimmed {
+.u-font-logo {
+  font-family: setting.$font-family-logo;
+}
+
+.u-text-primary {
+  color: var(--c-button-normal);
+}
+
+.u-text-secondary {
   color: var(--c-text-description);
 }
 
-.u-txt-brand {
+.u-text-brand {
   color: var(--c-brand-middle);
 }
 
-.u-txt-accent {
+.u-text-accent {
   color: var(--c-status-alert);
 }
 
-.u-txt-alert {
+.u-text-alert {
   color: var(--c-warning);
 }
 
-.u-txt-center {
+.u-text-center {
   text-align: center;
 }
 
-.u-txt-right {
+.u-text-right {
   text-align: right;
 }
 
-.u-txt-break {
+.u-text-break {
   word-break: break-word;
   overflow-wrap: break-word;
 }
 
-.u-txt-underline {
+.u-text-underline {
   text-decoration: underline;
   text-decoration-thickness: 0.5em;
-  text-decoration-color: rgb(var(--c-warning) 0.4);
+  text-decoration-color: rgba(var(--c-warning) 0.4);
   text-underline-offset: -0.2em;
   text-decoration-skip-ink: none;
 }

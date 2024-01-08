@@ -5,10 +5,18 @@
 .c-header {
   display: flex;
   align-items: center;
-  padding-top: setting.f-space-px(xs);
-  padding-bottom: setting.f-space-px(xs);
-  background: var(--c-bg-qua);
-  border-bottom: solid 1px var(--c-border-divider);
+  padding-top: clamp(setting.f-space-px(s), (setting.breakpoints(overm)), setting.f-space-px(m));
+  padding-bottom: clamp(setting.f-space-px(s), (setting.breakpoints(overm)), setting.f-space-px(m));
+  position: relative;
+}
+
+.c-logo-label {
+  &--header {
+    font-size: clamp(map.get(setting.$fontRemSize, 2xl), (setting.breakpoints(overm)), map.get(setting.$fontRemSize, 3xl));
+  }
+  &--footer {
+    font-size: clamp(map.get(setting.$fontRemSize, l), (setting.breakpoints(overm)), map.get(setting.$fontRemSize, xl));
+  }
 }
 
 .c-pc-nav {
@@ -60,64 +68,40 @@
   }
 }
 
-.c-sidebar {
-  position: fixed;
-  top: 0;
-  right: -240px;
-  z-index: 999;
-  width: 100%;
-  max-width: 240px;
-  height: 100svh;
-  overflow-y: auto;
-  pointer-events: none;
-  background: var(--c-bg-qua);
-  transition: right 0.1s ease-out;
-
-  &__header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 5px clamp(setting.f-space-px(m), setting.breakpoints(overs), setting.f-space-px(xl));
-  }
-
-  &--is-open {
-    right: 0;
-    pointer-events: auto;
-    transition: right 0.1s ease-out;
-  }
-}
-
 .c-gnav {
-  &-item {
-    &:first-of-type {
-      border-top: solid 1px var(--c-border-divider);
+  @include tool.max-screen(setting.$underm) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background: var(--c-bg-qua);
+    padding-right: clamp(
+      clamp(setting.f-space-px(m), setting.breakpoints(overm), setting.f-space-px(xl)),
+      setting.breakpoints(overs),
+      clamp(setting.f-space-px(xl), setting.breakpoints(overm), setting.f-space-px(3xl))
+    );
+    padding-left: clamp(
+      clamp(setting.f-space-px(m), setting.breakpoints(overm), setting.f-space-px(xl)),
+      setting.breakpoints(overs),
+      clamp(setting.f-space-px(xl), setting.breakpoints(overm), setting.f-space-px(3xl))
+    );
+    padding-bottom: setting.f-space-px(l);
+    &--is-open {
+      display: block;
     }
-
-    border-bottom: solid 1px var(--c-border-divider);
+    &-item {
+      width: 100%;
+    }
   }
-
+  @include tool.min-screen(setting.$breakm) {
+    margin-left: auto;
+  }
   &-link {
-    display: block;
-    padding: setting.f-space-px(s) setting.f-space-px(m);
-  }
-}
-
-.c-sidebar-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 998;
-  display: none;
-  pointer-events: none;
-  cursor: pointer;
-  visibility: hidden;
-  background: rgba(map.get(setting.$sys-light, scrim), 0.5);
-  opacity: 0;
-  transition: opacity 0.1s ease-out;
-
-  .c-sidebar--is-open + & {
-    display: block;
-    pointer-events: auto;
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.1s ease-out;
+    color: currentColor;
+    @include tool.max-screen(setting.$underm) {
+      display: block;
+    }
   }
 }

@@ -1,20 +1,29 @@
 @use "../settings" as setting;
+@use "sass:map";
 
 .o-icon-parent {
   display: inline-flex;
   gap: setting.f-space-em(s);
   align-items: baseline;
 
-  &--full-wide {
-    width: 100%;
+  &--center {
+    align-items: center;
+  }
+
+  &--header-logo,
+  &--footer-logo {
+    gap: setting.f-space-px(s);
+    color: currentColor;
+    transition: all 0.25s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--c-text-hover);
+    }
   }
 
   &--text-center {
     justify-content: center;
-  }
-
-  &--center {
-    align-items: center;
   }
 
   &--form-item {
@@ -50,13 +59,15 @@
   font-size: setting.f-font-emsize(2xs);
   line-height: setting.f-lineheight(none);
 
+  .o-icon-parent--header-logo & {
+    font-size: clamp(map.get(setting.$fontRemSize, 3xl), (setting.breakpoints(overm)), map.get(setting.$fontRemSize, 4xl));
+  }
+  .o-icon-parent--footer-logo & {
+    font-size: clamp(map.get(setting.$fontRemSize, xl), (setting.breakpoints(overm)), map.get(setting.$fontRemSize, 2xl));
+  }
+
   &--required {
-    flex-shrink: 0;
     padding: setting.f-space-px(xs) setting.f-space-px(s);
-    margin-left: auto;
-    font-weight: setting.f-fontweight(b);
-    color: var(--c-text-body);
-    background-color: var(--c-bg-primary);
     border-radius: setting.f-border-radius(s);
   }
 }

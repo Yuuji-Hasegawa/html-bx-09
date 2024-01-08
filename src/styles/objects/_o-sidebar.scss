@@ -5,6 +5,7 @@
   flex-wrap: wrap;
 
   --gutter: #{setting.f-space-px(l)};
+  --growBase: #{setting.breakpoints(unders)};
 
   gap: var(--gutter);
 
@@ -16,7 +17,8 @@
     --gutter: 0;
   }
 
-  &--bio {
+  &--bio,
+  &--footer-logo {
     --gutter: #{setting.f-space-px(m)};
   }
 
@@ -53,7 +55,7 @@
   }
 
   &__wide {
-    min-width: 50%;
+    min-width: min(setting.breakpoints(underm), 100%)
   }
 
   &__footLeft {
@@ -63,13 +65,14 @@
 
   &__footRight {
     min-width: min(setting.breakpoints(unders), 100%);
-    padding-top: min(setting.breakpoints(overs), setting.f-space-px(l));
     margin-left: auto;
   }
 
-  &__news-link {
-    flex-basis: setting.breakpoints(unders);
+  &__grow {
     flex-grow: 1;
-    text-align: left;
+    flex-basis: var(--growBase);
+    &--news {
+      text-align: left;
+    }
   }
 }

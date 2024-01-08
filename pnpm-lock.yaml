@@ -76,9 +76,6 @@ devDependencies:
   sharp:
     specifier: ^0.32.5
     version: 0.32.5
-  simple-git-hooks:
-    specifier: ^2.9.0
-    version: 2.9.0
   stylelint:
     specifier: ^15.10.3
     version: 15.10.3
@@ -4697,12 +4694,6 @@ packages:
       decompress-response: 6.0.0
       once: 1.4.0
       simple-concat: 1.0.1
-    dev: true
-
-  /simple-git-hooks@2.9.0:
-    resolution: {integrity: sha512-waSQ5paUQtyGC0ZxlHmcMmD9I1rRXauikBwX31bX58l5vTOhCEcBC5Bi+ZDkPXTjDnZAF8TbCqKBY+9+sVPScw==}
-    hasBin: true
-    requiresBuild: true
     dev: true
 
   /simple-swizzle@0.2.2:

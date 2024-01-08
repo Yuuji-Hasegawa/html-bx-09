@@ -1,11 +1,8 @@
 @use "../settings" as setting;
 
-.u-bg-base {
-  background-color: var(--c-bg-primary);
-}
-
-.u-bg-white {
-  background-color: var(--c-bg-qua);
+.u-bg-primary {
+  color: var(--c-text-on-fill);
+  background-color: var(--c-button-normal);
 }
 
 .u-bg-secondary {
@@ -18,7 +15,7 @@
   background-color: var(--c-bg-tertiary);
 }
 
-.u-bg-brand {
-  color: var(--c-text-on-fill);
-  background-color: var(--c-brand-middle);
+.u-bg-qua {
+  background: var(--c-bg-qua);
+  color: var(--c-text-body);
 }

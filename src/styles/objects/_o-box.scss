@@ -9,34 +9,13 @@
   outline-offset: -1px;
   transition: all 0.25s ease;
 
-  &--cta {
-    padding-bottom: 4rem;
-    color: var(--c-text-on-fill);
-    background: var(--c-button-normal);
+  &--transparent,
+  &--post {
     border-color: transparent;
   }
 
-  &--bordered {
-    border: solid 1px var(--c-border-field);
-  }
-
-  &--entry,
-  &--bg-fill {
-    background: var(--c-bg-qua);
-  }
-
-  &--entry {
-    padding-bottom: setting.f-space-rem(2xl);
-    border-color: transparent;
+  &--post {
     box-shadow: 0 0 1px var(--c-border-field);
-  }
-
-  &--bg-fill {
-    color: var(--c-button-normal);
-  }
-
-  &--toc {
-    padding: setting.f-space-px(s) setting.f-space-px(m);
   }
 
   &--ghost-button {
@@ -45,11 +24,6 @@
     background: var(--c-bg-tertiary);
     border-radius: setting.f-border-radius(s);
     transition: all 0.25s ease;
-  }
-
-  &--ghost-button,
-  &--blog-card,
-  &--blog-embed {
     border-color: var(--c-border-divider);
 
     &:hover,
@@ -61,19 +35,6 @@
       outline-style: solid;
       outline-color: var(--c-button-normal);
     }
-  }
-
-  &--blog-card {
-    height: 100%;
-  }
-
-  &--blog-embed {
-    padding: setting.f-space-px(m);
-  }
-
-  &--card-inner {
-    padding: setting.f-space-px(l) clamp(setting.f-space-px(s), setting.breakpoints(overm), setting.f-space-px(m));
-    border-color: transparent;
   }
 
   &--button {
@@ -100,23 +61,9 @@
     }
   }
 
-  &--cat,
   &--primary-button {
     color: var(--c-text-on-fill);
     background-color: var(--c-button-normal);
-  }
-
-  &--cat {
-    padding: setting.f-space-em(2xs) setting.f-space-em(s);
-    font-size: setting.f-font-remsize(3xs);
-    font-weight: setting.f-fontweight(m);
-    line-height: setting.f-lineheight(s);
-    letter-spacing: setting.f-letterspacing(m);
-    border-color: transparent;
-    border-radius: setting.f-font-emsize(m);
-  }
-
-  &--primary-button {
     &:hover,
     &:focus {
       background-color: color-mix(in oklab, var(--c-button-normal), map.get(setting.$sys-light, onContainer) 15%);
@@ -186,9 +133,7 @@
 
   &--input {
     padding: setting.f-space-px(s);
-    color: var(--c-text-placeholder);
     resize: none;
-    background: var(--c-bg-qua);
     border-color: var(--c-border-divider);
     border-radius: setting.f-border-radius(s);
 
@@ -198,10 +143,6 @@
       outline-style: solid;
       outline-color: var(--c-border-selected);
     }
-  }
-
-  &--full-wide {
-    width: 100%;
   }
 
   &--radio,
@@ -220,7 +161,7 @@
     }
 
     &:checked {
-      background: var(--c-brand-middle);
+      background: var(--c-button-normal);
 
       &::after {
         position: absolute;
@@ -265,12 +206,12 @@
   }
 
   &--menu-btn {
-    margin-left: auto;
     background: transparent;
     border-color: var(--c-border-divider);
-
-    @include tool.min-screen(setting.$breakm) {
-      display: none;
-    }
+  }
+  &--round-label {
+    padding: setting.f-space-em(2xs) setting.f-space-em(s);
+    border-color: transparent;
+    border-radius: setting.f-font-emsize(m);
   }
 }

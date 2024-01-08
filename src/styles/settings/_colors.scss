@@ -341,8 +341,10 @@
   );
 }
 
+$myBrand: #7fbce7;
+
 $pattern: (
-  myBlue: #007aff,
+  myBlue: $myBrand,
   myIndigo: #5856d6,
   myPurple: #af52de,
   myPink: #ff2d55,

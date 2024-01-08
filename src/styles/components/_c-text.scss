@@ -1,4 +1,5 @@
 @use "../settings" as setting;
+@use "sass:map";
 
 .c-content-l,
 .c-content-m,
@@ -61,41 +62,54 @@
     content: "*";
   }
 }
-
-.c-number-text {
-  font-family: setting.$font-family-en;
+.c-gnav-link,
+.c-tel-link,
+.c-entry a,
+.c-text-link {
+  transition: all 0.25s ease;
+  &:hover,
+  &:focus {
+    color: var(--c-text-hover);
+  }
 }
-
-.c-number-text-variant {
-  font-family: setting.$font-family-en-condensed;
-}
-
 .c-entry a,
 .c-text-link {
   color: var(--c-text-link);
-  text-decoration: underline;
-  transition: all 0.25s ease;
 
   &:visited {
     color: var(--c-text-visited);
   }
-
+}
+.c-entry a,
+.c-text-link--underline {
+  text-decoration: underline;
   &:hover,
   &:focus {
-    color: var(--c-text-hover);
     text-decoration: none;
   }
 }
 
 .c-text-link {
-  &--no-underline {
-    text-decoration: none;
-  }
-
   &--full-wide {
     display: block;
     word-break: break-word;
     overflow-wrap: break-word;
+  }
+}
+
+.c-link-card {
+  transition: all 0.25s ease;
+  border-color: var(--c-border-divider);
+  height: 100%;
+
+  &:hover,
+  &:focus {
+    border-color: color-mix(in oklab, var(--c-button-normal), map.get(setting.$sys-light, onContainer) 15%);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: var(--c-button-normal);
   }
 }
 
