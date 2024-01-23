@@ -66,7 +66,11 @@
 .c-gnav-link,
 .c-tel-link,
 .c-entry a,
-.c-text-link {
+.c-text-link,
+.c-photo-link,
+.c-logo-link,
+.c-sns-link,
+.c-ft-link {
   transition: all 0.25s ease;
 
   &:hover,
@@ -94,12 +98,11 @@
   }
 }
 
-.c-text-link {
-  &--full-wide {
-    display: block;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
+.c-text-link--full-wide,
+.c-backbtn {
+  display: block;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .c-link-card {
@@ -157,4 +160,66 @@
   display: table;
   width: min(setting.breakpoints(overs), 100%);
   min-width: max-content;
+}
+
+.c-inner-box {
+  padding: clamp(0px, (setting.breakpoints(underm)), setting.f-space-px(m))
+    clamp(setting.f-space-px(m), (setting.breakpoints(overm)), setting.f-space-px(l));
+
+  &--max-content {
+    max-width: clamp(640px, setting.breakpoints(underm), 100%);
+    margin: auto;
+  }
+}
+
+.c-photo-link {
+  color: var(--c-text-on-fill);
+
+  & .o-frame > * {
+    transition: all 0.25s ease-out;
+  }
+
+  &:hover,
+  &:focus {
+    & .o-frame > * {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.js-pull-view {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    content: "";
+    background: var(--c-bg-qua);
+    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &.is-view {
+    opacity: 1;
+
+    &::after {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.js-fade-up {
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+  transform: translateY(50px);
+
+  &.is-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

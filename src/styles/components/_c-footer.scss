@@ -1,5 +1,22 @@
 @use "../settings" as setting;
 
+.c-backbtn {
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--c-text-on-fill);
+    background: var(--c-text-hover);
+  }
+
+  &:focus {
+    outline-color: var(--c-text-hover);
+  }
+}
+
 .c-footer {
   position: sticky;
   top: 100svh;

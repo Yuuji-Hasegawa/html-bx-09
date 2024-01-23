@@ -78,6 +78,8 @@ $spaceEm: (
   @return map.get($spaceEm, $key);
 }
 
+$breakxl: 1380px;
+$breakl: 1252px;
 $breaks: 521px;
 $breakm: 961px;
 $unders: $breaks - 1px;
@@ -87,6 +89,8 @@ $breakpoints: (
   underm: calc(($underm - 100vw) * 999),
   overs: calc((100vw - $unders) * 999),
   overm: calc((100vw - $underm) * 999),
+  overl: calc((100vw - $breakl) * 999),
+  overxl: calc((100vw - $breakxl) * 999),
 ) !default;
 
 @function breakpoints($key) {

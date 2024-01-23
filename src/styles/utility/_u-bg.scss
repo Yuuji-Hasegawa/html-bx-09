@@ -1,4 +1,6 @@
 @use "../settings" as setting;
+@use "../tools" as tool;
+@use "sass:map";
 
 .u-bg-primary {
   color: var(--c-text-on-fill);
@@ -18,4 +20,102 @@
 .u-bg-qua {
   color: var(--c-text-body);
   background: var(--c-bg-qua);
+}
+
+.u-bg-invert {
+  color: var(--c-bg-qua);
+  background-color: var(--c-text-body);
+}
+
+.u-bg-blue,
+.u-bg-indigo,
+.u-bg-purple,
+.u-bg-pink,
+.u-bg-red,
+.u-bg-orange,
+.u-bg-yellow,
+.u-bg-green,
+.u-bg-teal,
+.u-bg-cyan {
+  color: var(--c-text-on-fill);
+}
+
+.u-bg-blue {
+  background: map.get(setting.$pattern, myBlue);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myBlue);
+  }
+}
+
+.u-bg-indigo {
+  background: map.get(setting.$pattern, myIndigo);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myIndigo);
+  }
+}
+
+.u-bg-purple {
+  background: map.get(setting.$pattern, myPurple);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myPurple);
+  }
+}
+
+.u-bg-pink {
+  background: map.get(setting.$pattern, myPink);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myPink);
+  }
+}
+
+.u-bg-red {
+  background: map.get(setting.$pattern, myRed);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myRed);
+  }
+}
+
+.u-bg-orange {
+  background: map.get(setting.$pattern, myOrange);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myOrange);
+  }
+}
+
+.u-bg-yellow {
+  background: map.get(setting.$pattern, myYellow);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myYellow);
+  }
+}
+
+.u-bg-green {
+  background: map.get(setting.$pattern, myGreen);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myGreen);
+  }
+}
+
+.u-bg-teal {
+  background: map.get(setting.$pattern, myTeal);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myTeal);
+  }
+}
+
+.u-bg-cyan {
+  background: map.get(setting.$pattern, myCyan);
+
+  @include tool.darkmode {
+    background: map.get(setting.$darkPattern, myCyan);
+  }
 }

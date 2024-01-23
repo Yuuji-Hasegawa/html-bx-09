@@ -11,10 +11,10 @@
     <script type="module" src="scripts/main.mjs"></script>
   </head>
   <body>
-    <header class="o-center c-header u-bg-qua">
-      <a href="#" class="o-icon-parent o-icon-parent--center o-icon-parent--header-logo">
+    <header class="c-header u-bg-qua">
+      <a href="#" class="o-icon-parent o-icon-parent--center o-icon-parent--gap-s c-logo-link">
         <svg
-          class="o-icon"
+          class="o-icon c-display-l"
           width="670"
           height="403"
           viewBox="0 0 670 403"
@@ -37,27 +37,100 @@
           <path d="M167.497 134.035L251.245 0L334.993 134.045L167.497 134.035Z" fill="#73B2E2" />
           <path d="M251.225 0L167.498 134.035L83.749 0H251.225Z" fill="#65A5DA" />
         </svg>
-        <span class="c-logo-label c-logo-label--header u-font-logo u-flex-shrink-none">BLUE B NOSE</span>
+        <span class="c-display-m u-font-logo u-flex-shrink-none">BLUE B NOSE</span>
       </a>
-      <nav id="gnav" class="c-gnav" aria-hidden="false" tabindex="">
-        <ul class="o-cluster">
-          <li class="c-gnav-item"><a class="c-gnav-link c-content-l u-text-weight-b" href="#">トップ</a></li>
-          <li class="c-gnav-item"><a class="c-gnav-link c-content-l u-text-weight-b" href="#">会社情報</a></li>
-          <li class="c-gnav-item"><a class="c-gnav-link c-content-l u-text-weight-b" href="#">ブログ</a></li>
-          <li class="c-gnav-item"><a class="c-gnav-link c-content-l u-text-weight-b" href="#">お知らせ</a></li>
-          <li class="c-gnav-item"><a class="c-gnav-link c-content-l u-text-weight-b" href="#">お問い合わせ</a></li>
+      <nav class="c-pc-nav u-pc-only u-ml-m">
+        <ul class="o-cluster o-cluster--gap-none u-height-full">
+          <li class="c-pc-item">
+            <a href="#" class="o-stack c-pc-link u-full-width">
+              <span class="c-content-l u-text-weight-m">トップ</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">TOP</span>
+            </a>
+          </li>
+          <li class="c-pc-item">
+            <a href="#" class="o-stack c-pc-link u-full-width">
+              <span class="c-content-l u-text-weight-m"><span class="u-font-logo">BLUE B NOSE</span>について</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">ABOUT US</span>
+            </a>
+          </li>
+          <li class="c-pc-item">
+            <a href="#" class="o-stack c-pc-link u-full-width">
+              <span class="c-content-l u-text-weight-m">会社情報</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">COMPANY</span>
+            </a>
+          </li>
+          <li class="c-pc-item">
+            <a href="#" class="o-stack c-pc-link u-full-width">
+              <span class="c-content-l u-text-weight-m">事業案内</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">SERVICE</span>
+            </a>
+          </li>
+          <li class="c-pc-item">
+            <a href="#" class="o-stack c-pc-link u-full-width">
+              <span class="c-content-l u-text-weight-m">お問い合わせ</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">INQUIRY</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <button
         type="button"
-        class="o-box o-box--button o-box--square-button o-box--menu-btn u-pc-none u-block-right"
+        class="o-box o-box--transparent o-box--menu-btn u-pc-none u-block-right"
         aria-label="menu open"
-        aria-controls="gnav"
-        aria-expanded="true"
+        aria-controls="spMenu"
+        aria-expanded="false"
       >
         <span class="c-menu-bars"></span>
       </button>
     </header>
+    <div id="spMenu" class="o-stack c-sp-menu u-bg-qua" aria-hidden="true" tabindex="-1">
+      <div class="c-header u-bg-qua">
+        <button
+          type="button"
+          class="o-box o-box--transparent o-box--menu-btn u-block-right"
+          aria-label="menu open"
+          aria-controls="spMenu"
+          aria-expanded="false"
+        >
+          <span class="c-menu-bars"></span>
+        </button>
+      </div>
+      <nav class="o-center c-sp-nav u-pb-2xl">
+        <ul class="o-stack u-height-full">
+          <li class="c-sp-item">
+            <a class="o-stack c-sp-link u-full-width" href="#">
+              <span class="c-content-l u-text-weight-m">トップ</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">TOP</span>
+            </a>
+          </li>
+          <li class="c-sp-item">
+            <a class="o-stack c-sp-link u-full-width" href="#">
+              <span class="c-content-l u-text-weight-m"><span class="u-font-logo">BLUE B NOSE</span>について</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">ABOUT US</span>
+            </a>
+          </li>
+          <li class="c-sp-item">
+            <a class="o-stack c-sp-link u-full-width" href="#">
+              <span class="c-content-l u-text-weight-m">会社情報</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">COMPANY</span>
+            </a>
+          </li>
+          <li class="c-sp-item">
+            <a class="o-stack c-sp-link u-full-width" href="#">
+              <span class="c-content-l u-text-weight-m">事業案内</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">SERVICE</span>
+            </a>
+          </li>
+          <li class="c-sp-item">
+            <a class="o-stack c-sp-link u-full-width" href="#">
+              <span class="c-content-l u-text-weight-m">お問い合わせ</span>
+              <span class="c-content-m u-font-en-con u-text-primary u-text-weight-m">INQUIRY</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="c-menu-bg"></div>
     <main>
       <div class="c-puton c-puton--filter">
         <picture class="o-frame o-frame--switch-l">
@@ -72,9 +145,12 @@
           </h1>
         </div>
       </div>
-      <div class="o-box o-box--transparent u-bg-qua u-pb-2xl">
+      <div class="o-box o-box--transparent u-bg-qua u-pt-2xl u-pb-2xl">
         <div class="o-center o-center--content">
-          <h2 class="c-sec-heading u-text-center u-text-weight-b u-font-en">Information</h2>
+          <h2 class="o-stack u-mb-l u-text-center">
+            <span class="c-display-m u-text-weight-b u-font-en-con">NEWS</span>
+            <span class="c-content-l u-text-weight-b">お知らせ</span>
+          </h2>
           <ul class="o-stack o-stack--m u-mb-l">
             <li class="o-sidebar">
               <time class="c-content-l u-font-en-con u-text-weight-b">2023.00.00</time>
@@ -107,22 +183,90 @@
               </a>
             </li>
           </ul>
-          <div class="u-text-right">
-            <a href="#" class="o-icon-parent c-content-l c-text-link u-text-weight-b">
-              一覧を見る
-              <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
-                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
-                <path
-                  d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
+          <div class="u-text-center">
+            <a href="#" class="o-box o-box--button o-box--rect-button o-box--ghost-button u-font-en-con"> MORE </a>
           </div>
         </div>
       </div>
-      <div class="o-center u-pb-2xl">
-        <h2 class="c-sec-heading u-text-center u-text-weight-b u-font-en">What's New</h2>
+      <div class="o-box o-box--transparent o-center u-bg-primary u-pt-2xl u-pb-2xl">
+        <h2 class="o-stack u-mb-l u-text-center">
+          <span class="c-display-m u-text-weight-b u-font-en-con">SERVICE</span>
+          <span class="c-content-l u-text-weight-b">事業案内</span>
+        </h2>
+        <ul class="o-grid o-grid--tri u-mb-xl">
+          <li class="o-stack o-stack--l">
+            <picture class="o-frame">
+              <source type="image/avif" srcset="/img/hero.avif" />
+              <source type="image/webp" srcset="/img/hero.webp" />
+              <img
+                src="/img/hero.png"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+                alt=""
+              />
+            </picture>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--ghost-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+          <li class="o-stack o-stack--l">
+            <picture class="o-frame">
+              <source type="image/avif" srcset="/img/hero.avif" />
+              <source type="image/webp" srcset="/img/hero.webp" />
+              <img
+                src="/img/hero.png"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+                alt=""
+              />
+            </picture>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--ghost-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+          <li class="o-stack o-stack--l">
+            <picture class="o-frame">
+              <source type="image/avif" srcset="/img/hero.avif" />
+              <source type="image/webp" srcset="/img/hero.webp" />
+              <img
+                src="/img/hero.png"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+                alt=""
+              />
+            </picture>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--ghost-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+        </ul>
+        <div class="u-text-center">
+          <a href="#" class="o-box o-box--button o-box--rect-button o-box--ghost-button u-font-en-con"> MORE </a>
+        </div>
+      </div>
+      <div class="o-center u-pb-2xl u-pt-2xl">
+        <h2 class="o-stack u-mb-l u-text-center">
+          <span class="c-display-m u-text-weight-b u-font-en-con">WHAT'S NEW</span>
+          <span class="c-content-l u-text-weight-b">新着記事</span>
+        </h2>
         <ul class="o-grid o-grid--tri u-mb-xl">
           <li>
             <a href="#" class="o-box o-stack c-link-card u-bg-qua">
@@ -306,21 +450,23 @@
           </li>
         </ul>
         <div class="u-text-center">
-          <a class="o-box o-box--button o-box--rect-button o-box--primary-button o-icon-parent" href="#">
-            コンテンツ一覧
-            <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
-              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
-              <path
-                d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </a>
+          <a href="#" class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con"> MORE </a>
         </div>
       </div>
       <!-- 404 -->
-      <div class="o-box o-box--transparent o-center u-bg-qua u-pb-2xl">
-        <h1 class="c-heading u-text-weight-b">お探しのページは見つかりませんでした。</h1>
+      <div class="c-puton c-puton--filter">
+        <picture class="o-frame o-frame--switch-l">
+          <source type="image/avif" srcset="/img/hero.avif" />
+          <source type="image/webp" srcset="/img/hero.webp" />
+          <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+        </picture>
+        <div class="c-puton__inner o-cover">
+          <h1 class="c-hero-copy o-cover__middle">
+            <span class="c-display-l u-text-weight-b u-font-en-con">NOT FOUND.</span>
+          </h1>
+        </div>
+      </div>
+      <div class="o-box o-box--transparent o-center u-bg-qua u-pt-2xl u-pb-2xl">
         <p class="c-content-l">
           大変申し訳ございませんが、お探しのページ(URL:#)は見つかりませんでした。<br />アドレスバーに直接URLを入力された場合は、アドレスが正しく入力されているか、もう一度ご確認下さい。
         </p>
@@ -364,23 +510,41 @@
       </nav>
       <!-- // 404 -->
       <!-- company -->
-      <div class="o-box o-box--transparent o-center u-bg-qua u-pb-2xl">
-        <h1 class="c-heading u-text-weight-b">会社情報</h1>
+      <div class="c-puton c-puton--filter">
+        <picture class="o-frame o-frame--switch-l">
+          <source type="image/avif" srcset="/img/hero.avif" />
+          <source type="image/webp" srcset="/img/hero.webp" />
+          <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+        </picture>
+        <div class="c-puton__inner o-cover">
+          <h1 class="c-hero-copy o-cover__middle">
+            <span class="c-display-l u-text-weight-b u-font-en-con">COMPANY</span>
+            <span class="c-display-xs">会社情報</span>
+          </h1>
+        </div>
+      </div>
+      <div class="o-center u-bg-qua u-pt-2xl u-pb-2xl">
+        <h2 class="o-stack u-mb-l u-text-center">
+          <span class="c-display-m u-text-weight-b u-font-en-con">OVERVIEW</span>
+          <span class="c-content-l u-text-weight-b">会社概要</span>
+        </h2>
         <dl class="o-sidebar o-sidebar--table">
-          <dt class="o-box o-box--thead c-content-l u-bg-secondary">屋号/商号</dt>
-          <dd class="o-box o-box--tbody c-content-l">BLUE B NOSE</dd>
-          <dt class="o-box o-box--thead c-content-l u-bg-secondary">所在地</dt>
-          <dd class="o-box o-box--tbody c-content-l">〒530-0011 大阪府大阪市北区大深町3-1 グランフロント大阪</dd>
-          <dt class="o-box o-box--thead c-content-l u-bg-secondary">設立</dt>
-          <dd class="o-box o-box--tbody c-content-l">20YY年mm月dd日</dd>
-          <dt class="o-box o-box--thead c-content-l u-bg-secondary">代表取締役</dt>
-          <dd class="o-box o-box--tbody c-content-l">サンプル太郎</dd>
-          <dt class="o-box o-box--thead c-content-l u-bg-secondary">URL</dt>
-          <dd class="o-box o-box--tbody c-content-l">
+          <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">屋号/商号</dt>
+          <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">BLUE B NOSE</dd>
+          <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">所在地</dt>
+          <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">
+            〒530-0011 大阪府大阪市北区大深町3-1 グランフロント大阪
+          </dd>
+          <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">設立</dt>
+          <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">20YY年mm月dd日</dd>
+          <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">代表取締役</dt>
+          <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">サンプル太郎</dd>
+          <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">URL</dt>
+          <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">
             <a class="c-text-link" href="#" target="_blank" rel="noopener">https://bbns.jp</a>
           </dd>
-          <dt class="o-box o-box--thead c-content-l u-bg-secondary">事業内容</dt>
-          <dd class="o-box o-box--tbody c-content-l">
+          <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">事業内容</dt>
+          <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">
             <ul class="c-disc-list">
               <li>事業項目1</li>
               <li>事業項目2</li>
@@ -390,74 +554,46 @@
             </ul>
           </dd>
         </dl>
-        <h2 class="c-sec-heading u-text-weight-b">アクセス</h2>
-        <div class="o-sidebar">
-          <div class="o-sidebar__narrow">
-            <ul class="c-disc-list u-mb-l">
-              <li class="c-content-l">JR大阪駅から徒歩n分</li>
-              <li class="c-content-l">各線梅田駅から徒歩n分</li>
-            </ul>
-            <a
-              href="https://maps.app.goo.gl/VfNydfqzmp4hEZKw7"
-              target="_blank"
-              rel="noopener"
-              class="o-box o-box--button o-box--rect-button u-mb-xl"
-            >
-              <span class="o-icon-parent">
-                <span class="u-flex-shrink-none">Google Maps</span>
-                <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.3 132.3">
-                  <path
-                    fill="#1a73e8"
-                    d="M60.2 2.2C55.8.8 51 0 46.1 0 32 0 19.3 6.4 10.8 16.5l21.8 18.3L60.2 2.2z"
-                  ></path>
-                  <path
-                    fill="#ea4335"
-                    d="M10.8 16.5C4.1 24.5 0 34.9 0 46.1c0 8.7 1.7 15.7 4.6 22l28-33.3-21.8-18.3z"
-                  ></path>
-                  <path
-                    fill="#4285f4"
-                    d="M46.2 28.5c9.8 0 17.7 7.9 17.7 17.7 0 4.3-1.6 8.3-4.2 11.4 0 0 13.9-16.6 27.5-32.7-5.6-10.8-15.3-19-27-22.7L32.6 34.8c3.3-3.8 8.1-6.3 13.6-6.3"
-                  ></path>
-                  <path
-                    fill="#fbbc04"
-                    d="M46.2 63.8c-9.8 0-17.7-7.9-17.7-17.7 0-4.3 1.5-8.3 4.1-11.3l-28 33.3c4.8 10.6 12.8 19.2 21 29.9l34.1-40.5c-3.3 3.9-8.1 6.3-13.5 6.3"
-                  ></path>
-                  <path
-                    fill="#34a853"
-                    d="M59.1 109.2c15.4-24.1 33.3-35 33.3-63 0-7.7-1.9-14.9-5.2-21.3L25.6 98c2.6 3.4 5.3 7.3 7.9 11.3 9.4 14.5 6.8 23.1 12.8 23.1s3.4-8.7 12.8-23.2"
-                  ></path>
-                </svg>
-              </span>
-            </a>
-            <div class="o-stack o-stack--s">
-              <dl class="o-cluster">
-                <dt class="u-txt-weight-b c-content-l">営業時間</dt>
-                <dd class="c-content-l">HH:MM〜HH:MM</dd>
-              </dl>
-              <dl class="o-cluster">
-                <dt class="u-txt-weight-b c-content-l">定休日</dt>
-                <dd class="c-content-l">土日祝・年末年始</dd>
-              </dl>
-              <p class="c-notes c-suppl-l">営業時間、定休日ともに、施設に準じる</p>
-            </div>
-          </div>
-          <div class="o-sidebar__wide">
-            <div class="o-frame">
-              <iframe
-                class="c-lazy-map"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.970528685342!2d135.49183357574483!3d34.70592327291773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e68e5570e51f%3A0xb0e6e493c405c979!2z44CSNTMwLTAwMTEg5aSn6Ziq5bqc5aSn6Ziq5biC5YyX5Yy65aSn5rex55S677yT4oiS77yR!5e0!3m2!1sja!2sjp!4v1704696233017!5m2!1sja!2sjp"
-                width="100%"
-                height="100%"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Google Maps"
-              ></iframe>
-            </div>
-          </div>
+      </div>
+      <div class="u-bg-primary u-pt-2xl u-pb-2xl">
+        <div class="o-center o-center--content">
+          <h2 class="o-stack u-mb-l u-text-center">
+            <span class="c-display-m u-text-weight-b u-font-en-con">HISTORY</span>
+            <span class="c-content-l u-text-weight-b">沿革</span>
+          </h2>
+          <dl class="o-sidebar o-sidebar--table">
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l">20YY年MM月</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">できごと</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l">20YY年MM月</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">できごと</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l">20YY年MM月</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">できごと</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l">20YY年MM月</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">できごと</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l">20YY年MM月</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">できごと</dd>
+          </dl>
         </div>
+      </div>
+      <div class="o-center u-bg-qua u-pt-2xl u-pb-2xl">
+        <h2 class="o-stack u-text-center">
+          <span class="c-display-m u-text-weight-b u-font-en-con">ACCESS</span>
+          <span class="c-content-l u-text-weight-b">アクセス</span>
+        </h2>
+      </div>
+      <div class="o-frame o-frame--no-color">
+        <iframe
+          class="c-lazy-map"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.970528685342!2d135.49183357574483!3d34.70592327291773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e68e5570e51f%3A0xb0e6e493c405c979!2z44CSNTMwLTAwMTEg5aSn6Ziq5bqc5aSn6Ziq5biC5YyX5Yy65aSn5rex55S677yT4oiS77yR!5e0!3m2!1sja!2sjp!4v1704696233017!5m2!1sja!2sjp"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Maps"
+        ></iframe>
       </div>
       <nav class="o-center u-mt-xl u-mb-xl">
         <ol class="o-reel o-reel--breadcrumb">
@@ -2376,140 +2512,627 @@
         </ol>
       </nav>
       <!-- //post single -->
-    </main>
-    <div class="o-box o-box--transparent o-center u-bg-primary u-pt-2xl u-pb-2xl">
-      <h2 class="o-stack u-text-center u-mb-m">
-        <span class="c-display-m u-text-weight-b">お問い合わせ</span>
-        <span class="c-content-l u-text-weight-m">ご相談・ご質問は、こちらからお気軽にお問い合わせください。</span>
-      </h2>
-      <div class="o-stack o-stack--s u-text-center u-mb-m">
-        <a
-          href="#"
-          class="o-icon-parent o-icon-parent--text-center c-tel-link c-display-l"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-            <path
-              d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span class="u-font-en-con u-text-weight-b">000-0000-0000</span>
-        </a>
-        <span class="c-suppl-l">営業時間 平日 HH:mm~HH:mm</span>
-      </div>
-      <div class="u-text-center">
-        <a href="#" class="o-box o-box--button o-box--rect-button o-icon-parent">
-          <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-            <path
-              d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-              fill="currentColor"
-            />
-          </svg>
-          メールでお問い合わせ
-        </a>
-      </div>
-    </div>
-    <footer class="o-center c-footer u-pt-2xl u-pb-2xl">
-      <div class="o-sidebar u-mb-m">
-        <div class="o-stack o-stack--m o-sidebar__footLeft">
-          <ul class="o-cluster">
-            <li><a class="c-gnav-link c-content-l u-text-weight-b" href="#">トップ</a></li>
-            <li><a class="c-gnav-link c-content-l u-text-weight-b" href="#">会社情報</a></li>
-            <li><a class="c-gnav-link c-content-l u-text-weight-b" href="#">ブログ</a></li>
-            <li><a class="c-gnav-link c-content-l u-text-weight-b" href="#">お知らせ</a></li>
-            <li><a class="c-gnav-link c-content-l u-text-weight-b" href="#">お問い合わせ</a></li>
-          </ul>
-          <ul class="o-cluster">
-            <li><a class="c-gnav-link c-content-m" href="#">利用規約</a></li>
-            <li><a class="c-gnav-link c-content-m" href="#">プライバシーポリシー</a></li>
-          </ul>
+      <!-- aboutus -->
+      <div class="c-puton c-puton--filter">
+        <picture class="o-frame o-frame--switch-l">
+          <source type="image/avif" srcset="/img/hero.avif" />
+          <source type="image/webp" srcset="/img/hero.webp" />
+          <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+        </picture>
+        <div class="c-puton__inner o-cover">
+          <h1 class="c-hero-copy o-cover__middle">
+            <span class="c-display-l u-text-weight-b u-font-en-con">ABOUT US</span>
+            <span class="c-display-xs"><span class="u-font-logo">BLUE B NOSE</span>について</span>
+          </h1>
         </div>
-        <div class="o-sidebar__footRight">
-          <h3 class="c-display-xs u-text-weight-b u-font-en-con">Follow Us</h3>
-          <div class="o-cluster">
-            <a class="c-text-link c-display-m" href="https://www.facebook.com/" target="_blank" rel="noopener">
-              <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <path
-                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-            <a class="c-text-link c-display-m" href="https://twitter.com/" target="_blank" rel="noopener">
-              <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                <path
-                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-            <a class="c-text-link c-display-m" href="https://twitter.com/" target="_blank" rel="noopener">
-              <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <path
-                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-            <a class="c-text-link c-display-m" href="https://www.instagram.com/" target="_blank" rel="noopener">
-              <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-            <a class="c-text-link c-display-m" href="https://www.youtube.com/" target="_blank" rel="noopener">
+      </div>
+      <div class="o-center u-pt-2xl u-pb-2xl u-bg-qua">
+        <p class="c-display-2xs u-content-wrap u-block-center u-mb-2xl u-text-primary u-text-center u-text-weight-b">
+          あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロ
+        </p>
+        <div class="o-switcher">
+          <div>
+            <picture class="o-frame">
+              <source type="image/avif" srcset="/img/hero.avif" />
+              <source type="image/webp" srcset="/img/hero.webp" />
+              <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+            </picture>
+          </div>
+          <div class="o-cover c-inner-box u-pb-xl u-pt-xl">
+            <p class="o-cover__middle">
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+            </p>
+          </div>
+        </div>
+        <h2 class="c-sec-heading u-text-center u-text-weight-b">小見出し</h2>
+        <div class="o-switcher u-mb-l">
+          <div class="o-cover c-inner-box u-pb-xl u-pt-xl">
+            <p class="o-cover__middle">
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+            </p>
+          </div>
+          <div>
+            <picture class="o-frame">
+              <source type="image/avif" srcset="/img/hero.avif" />
+              <source type="image/webp" srcset="/img/hero.webp" />
+              <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+            </picture>
+          </div>
+        </div>
+        <ul class="o-grid o-grid--half">
+          <li class="u-text-primary">
+            <a class="o-box o-box--button o-box--rect-button o-box--ghost-button u-full-width" href="#">項目1</a>
+          </li>
+          <li class="u-text-primary">
+            <a class="o-box o-box--button o-box--rect-button o-box--ghost-button u-full-width" href="#">項目2</a>
+          </li>
+          <li class="u-text-primary">
+            <a class="o-box o-box--button o-box--rect-button o-box--ghost-button u-full-width" href="#">項目3</a>
+          </li>
+          <li class="u-text-primary">
+            <a class="o-box o-box--button o-box--rect-button o-box--ghost-button u-full-width" href="#">項目4</a>
+          </li>
+        </ul>
+        <h2 class="c-sec-heading u-text-weight-b u-text-center">小見出し</h2>
+        <ul class="o-grid o-grid--tri">
+          <li>
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-blue u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-indigo u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-purple u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-pink u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-red u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-yellow u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-orange u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-green u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-teal u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+          <li class="o-stack o-stack--m">
+            <dl class="o-stack o-stack--m">
+              <dt class="c-display-2xs u-text-center u-text-weight-b u-bg-cyan u-pt-s u-pb-s u-pr-s u-pl-s">項目1</dt>
+              <dd class="c-content-l">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+      <nav class="o-center u-mt-xl u-mb-xl">
+        <ol class="o-reel o-reel--breadcrumb">
+          <li class="c-breadcrumb-item">
+            <a href="#" class="o-icon-parent c-text-link c-content-l">
               <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
                 <path
-                  d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+                  d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"
                   fill="currentColor"
-                />
+                ></path>
               </svg>
+              ホーム
             </a>
+          </li>
+          <li class="c-breadcrumb-item">
+            <a href="#" class="c-text-link c-content-l"> ブログ一覧 </a>
+          </li>
+          <li class="c-breadcrumb-item">
+            <a href="#" class="c-text-link c-content-l"> サンプルブログ </a>
+          </li>
+        </ol>
+      </nav>
+      <!-- // aboutus -->
+      <!-- service -->
+      <div class="c-puton c-puton--filter">
+        <picture class="o-frame o-frame--switch-l">
+          <source type="image/avif" srcset="/img/hero.avif" />
+          <source type="image/webp" srcset="/img/hero.webp" />
+          <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+        </picture>
+        <div class="c-puton__inner o-cover">
+          <h1 class="c-hero-copy o-cover__middle">
+            <span class="c-display-l u-text-weight-b u-font-en-con">SERVICE</span>
+            <span class="c-display-xs">業務案内</span>
+          </h1>
+        </div>
+      </div>
+      <div class="o-center u-pt-2xl u-pb-2xl u-bg-qua">
+        <ul class="o-grid o-grid--tri">
+          <li class="o-stack o-stack--l">
+            <a href="#" class="c-photo-link">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/hero.avif" />
+                <source type="image/webp" srcset="/img/hero.webp" />
+                <img
+                  src="/img/hero.png"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+            </a>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+          <li class="o-stack o-stack--l">
+            <a href="#" class="c-photo-link">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/hero.avif" />
+                <source type="image/webp" srcset="/img/hero.webp" />
+                <img
+                  src="/img/hero.png"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+            </a>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+          <li class="o-stack o-stack--l">
+            <a href="#" class="c-photo-link">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/hero.avif" />
+                <source type="image/webp" srcset="/img/hero.webp" />
+                <img
+                  src="/img/hero.png"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+            </a>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav class="o-center u-mt-xl u-mb-xl">
+        <ol class="o-reel o-reel--breadcrumb">
+          <li class="c-breadcrumb-item">
+            <a href="#" class="o-icon-parent c-text-link c-content-l">
+              <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                <path
+                  d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              ホーム
+            </a>
+          </li>
+          <li class="c-breadcrumb-item">
+            <a href="#" class="c-text-link c-content-l"> ブログ一覧 </a>
+          </li>
+          <li class="c-breadcrumb-item">
+            <a href="#" class="c-text-link c-content-l"> サンプルブログ </a>
+          </li>
+        </ol>
+      </nav>
+      <!-- // service -->
+      <!-- service single -->
+      <div class="c-puton c-puton--filter">
+        <picture class="o-frame o-frame--switch-l">
+          <source type="image/avif" srcset="/img/hero.avif" />
+          <source type="image/webp" srcset="/img/hero.webp" />
+          <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+        </picture>
+        <div class="c-puton__inner o-cover">
+          <h1 class="c-hero-copy o-cover__middle">
+            <span class="c-display-l u-text-weight-b u-font-en-con">SERVICE</span>
+            <span class="c-display-xs">業務案内</span>
+          </h1>
+        </div>
+      </div>
+      <div class="o-box o-box--transparent o-center o-center--content u-bg-qua u-pb-2xl">
+        <h1 class="c-heading u-text-weight-b u-text-center">ダミー</h1>
+        <div class="o-stack o-stack--l">
+          <picture class="o-frame">
+            <source type="image/avif" srcset="/img/hero.avif" />
+            <source type="image/webp" srcset="/img/hero.webp" />
+            <img src="/img/hero.png" width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+          </picture>
+          <h2 class="c-sec-heading u-text-weight-b u-text-center">概要</h2>
+          <p class="c-content-l">
+            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+          </p>
+          <h2 class="c-sec-heading u-text-weight-b u-text-center">特徴</h2>
+          <p class="c-content-l">
+            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+          </p>
+          <h2 class="c-sec-heading u-text-weight-b u-text-center">内容・料金</h2>
+          <dl class="o-sidebar o-sidebar--table">
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">項目</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">内容</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">項目</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">内容</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">項目</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">内容</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">項目</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">内容</dd>
+            <dt class="o-box o-box--thead o-box--ghost-thead c-content-l u-text-center">項目</dt>
+            <dd class="o-box o-box--tbody o-box--ghost-tbody c-content-l">内容</dd>
+          </dl>
+          <h2 class="c-sec-heading u-text-center">サービスのURLをシェアする</h2>
+          <div class="c-share-parent">
+            <input
+              type="text"
+              class="o-box o-box--input o-box--share c-content-l u-full-width"
+              value="https://examples.com/#/"
+              readonly=""
+            />
+            <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"
+                fill="currentColor"
+              ></path>
+            </svg>
           </div>
         </div>
       </div>
-      <div class="o-stack o-stack--s u-mb-l">
-        <a href="#" class="o-icon-parent o-icon-parent--center o-icon-parent--footer-logo u-max-item">
-          <svg
-            class="o-icon"
-            width="670"
-            height="403"
-            viewBox="0 0 670 403"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M586.221 268.039L502.504 402.075L418.733 268.039H586.221Z" fill="#69AEE0"></path>
-            <path d="M334.996 402.075L418.744 268.029L502.492 402.075H334.996Z" fill="#70B1E1"></path>
-            <path d="M418.723 268.039L334.996 402.075L251.246 268.039H418.723Z" fill="#92CAEF"></path>
-            <path d="M167.497 402.075L251.245 268.029L334.993 402.075H167.497Z" fill="#92CAEF"></path>
-            <path d="M0 402.075L83.7487 268.039L167.497 402.085L0 402.075Z" fill="#7EBAE6"></path>
-            <path d="M670 134.035L586.252 268.039L502.491 134.035H670Z" fill="#85C1EB"></path>
-            <path d="M418.743 268.039L502.481 134.035L586.218 268.039H418.743Z" fill="#7EBAE6"></path>
-            <path d="M502.492 134.035L418.744 268.039L334.996 134.035H502.492Z" fill="#7BB8E5"></path>
-            <path d="M251.246 268.039L334.996 134.035L418.723 268.039H251.246Z" fill="#85C1EB"></path>
-            <path d="M334.993 134.035L251.245 268.039L167.497 134.035H334.993Z" fill="#73B2E2"></path>
-            <path d="M83.749 268.039L167.498 134.035L251.225 268.039H83.749Z" fill="#67A0D3"></path>
-            <path d="M502.491 134.035L586.231 0L669.989 134.045L502.491 134.035Z" fill="#99D2F3"></path>
-            <path d="M334.996 134.035L418.744 0L502.492 134.045L334.996 134.035Z" fill="#82BEE9"></path>
-            <path d="M167.497 134.035L251.245 0L334.993 134.045L167.497 134.035Z" fill="#73B2E2"></path>
-            <path d="M251.225 0L167.498 134.035L83.749 0H251.225Z" fill="#65A5DA"></path>
-          </svg>
-          <span class="c-logo-label c-logo-label--footer u-font-logo u-flex-shrink-none">BLUE B NOSE</span>
-        </a>
-        <span class="c-suppl-l u-text-secondary">〒530-0011 大阪府大阪市北区大深町3-1 グランフロント大阪</span>
+      <div class="o-box o-box--transparent o-center u-pb-2xl">
+        <h2 class="c-sec-heading u-text-weight-b u-text-center">その他のサービス</h2>
+        <ul class="o-grid o-grid--tri">
+          <li class="o-stack o-stack--l">
+            <a href="#" class="c-photo-link">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/hero.avif" />
+                <source type="image/webp" srcset="/img/hero.webp" />
+                <img
+                  src="/img/hero.png"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+            </a>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+          <li class="o-stack o-stack--l">
+            <a href="#" class="c-photo-link">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/hero.avif" />
+                <source type="image/webp" srcset="/img/hero.webp" />
+                <img
+                  src="/img/hero.png"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+            </a>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+          <li class="o-stack o-stack--l">
+            <a href="#" class="c-photo-link">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/hero.avif" />
+                <source type="image/webp" srcset="/img/hero.webp" />
+                <img
+                  src="/img/hero.png"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+            </a>
+            <a
+              href="#"
+              class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con u-full-width u-text-left"
+            >
+              サービス名
+            </a>
+          </li>
+        </ul>
+        <div class="u-text-center u-mt-xl">
+          <a href="#" class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con"> MORE </a>
+        </div>
       </div>
-      <p class="c-suppl-m u-font-en-con u-text-center">©︎ exapmles.com</p>
+      <nav class="o-center u-mt-xl u-mb-xl">
+        <ol class="o-reel o-reel--breadcrumb">
+          <li class="c-breadcrumb-item">
+            <a href="#" class="o-icon-parent c-text-link c-content-l">
+              <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                <path
+                  d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              ホーム
+            </a>
+          </li>
+          <li class="c-breadcrumb-item">
+            <a href="#" class="c-text-link c-content-l"> ブログ一覧 </a>
+          </li>
+          <li class="c-breadcrumb-item">
+            <a href="#" class="c-text-link c-content-l"> サンプルブログ </a>
+          </li>
+        </ol>
+      </nav>
+      <!-- // service single -->
+    </main>
+    <button class="o-box o-box--transparent o-center u-bg-primary c-backbtn u-text-center u-pt-l u-pb-l" type="button">
+      <svg class="o-icon c-display-s" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <div class="o-box o-box--transparent o-center u-bg-qua u-pt-2xl u-pb-2xl">
+      <div class="o-switcher">
+        <div class="o-cover c-inner-box">
+          <div class="o-cover__middle o-stack">
+            <a href="#" class="o-icon-parent o-icon-parent--center o-icon-parent--text-center c-logo-link">
+              <svg
+                class="o-icon c-display-l"
+                width="670"
+                height="403"
+                viewBox="0 0 670 403"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M586.221 268.039L502.504 402.075L418.733 268.039H586.221Z" fill="#69AEE0"></path>
+                <path d="M334.996 402.075L418.744 268.029L502.492 402.075H334.996Z" fill="#70B1E1"></path>
+                <path d="M418.723 268.039L334.996 402.075L251.246 268.039H418.723Z" fill="#92CAEF"></path>
+                <path d="M167.497 402.075L251.245 268.029L334.993 402.075H167.497Z" fill="#92CAEF"></path>
+                <path d="M0 402.075L83.7487 268.039L167.497 402.085L0 402.075Z" fill="#7EBAE6"></path>
+                <path d="M670 134.035L586.252 268.039L502.491 134.035H670Z" fill="#85C1EB"></path>
+                <path d="M418.743 268.039L502.481 134.035L586.218 268.039H418.743Z" fill="#7EBAE6"></path>
+                <path d="M502.492 134.035L418.744 268.039L334.996 134.035H502.492Z" fill="#7BB8E5"></path>
+                <path d="M251.246 268.039L334.996 134.035L418.723 268.039H251.246Z" fill="#85C1EB"></path>
+                <path d="M334.993 134.035L251.245 268.039L167.497 134.035H334.993Z" fill="#73B2E2"></path>
+                <path d="M83.749 268.039L167.498 134.035L251.225 268.039H83.749Z" fill="#67A0D3"></path>
+                <path d="M502.491 134.035L586.231 0L669.989 134.045L502.491 134.035Z" fill="#99D2F3"></path>
+                <path d="M334.996 134.035L418.744 0L502.492 134.045L334.996 134.035Z" fill="#82BEE9"></path>
+                <path d="M167.497 134.035L251.245 0L334.993 134.045L167.497 134.035Z" fill="#73B2E2"></path>
+                <path d="M251.225 0L167.498 134.035L83.749 0H251.225Z" fill="#65A5DA"></path>
+              </svg>
+              <span class="c-display-m u-font-logo u-flex-shrink-none">BLUE B NOSE</span>
+            </a>
+            <div class="o-cluster o-cluster--center">
+              <a class="c-sns-link c-display-m" href="#" target="_blank" rel="noopener" aria-label="Goto Facebook">
+                <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <a class="c-sns-link c-display-m" href="#" target="_blank" rel="noopener" aria-label="Goto Twitter">
+                <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <a class="c-sns-link c-display-m" href="#" target="_blank" rel="noopener" aria-label="Goto Instagram">
+                <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="o-cover c-inner-box">
+          <ul class="o-cover__middle o-stack--s">
+            <li>
+              <a
+                href="#"
+                class="o-box o-box--button o-box--rect-button o-box--primary-button c-display-xs u-pt-l u-pb-l u-full-width"
+              >
+                お問い合わせはこちら
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="o-box o-box--button o-box--rect-button u-bg-invert u-full-width c-display-xs u-pt-l u-pb-l"
+              >
+                資料請求はこちら
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="c-footer">
+      <ul class="o-switcher o-switcher--no-gap">
+        <li>
+          <a href="#" class="c-photo-link">
+            <div class="c-puton c-puton--filter">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/dummy-img02.avif" />
+                <source type="image/webp" srcset="/img/dummy-img02.webp" />
+                <img
+                  src="/img/dummy-img02.jpg"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+              <div class="c-puton__inner o-cover c-inner-box">
+                <div class="o-cover__middle o-stack">
+                  <h2 class="c-display-s u-font-en-con u-text-weight-b">ABOUT US</h2>
+                  <p class="c-content-l"><span class="u-font-logo">BLUE B NOSE</span>について</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="c-photo-link">
+            <div class="c-puton c-puton--filter">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/dummy-img03.avif" />
+                <source type="image/webp" srcset="/img/dummy-img03.webp" />
+                <img
+                  src="/img/dummy-img03.jpg"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+              <div class="c-puton__inner o-cover c-inner-box">
+                <div class="o-cover__middle o-stack">
+                  <h2 class="c-display-s u-font-en-con u-text-weight-b">COMPANY</h2>
+                  <p class="c-content-l">会社情報</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="c-photo-link">
+            <div class="c-puton c-puton--filter">
+              <picture class="o-frame">
+                <source type="image/avif" srcset="/img/dummy-img01.avif" />
+                <source type="image/webp" srcset="/img/dummy-img01.webp" />
+                <img
+                  src="/img/dummy-img01.jpg"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  alt=""
+                />
+              </picture>
+              <div class="c-puton__inner o-cover c-inner-box">
+                <div class="o-cover__middle o-stack">
+                  <h2 class="c-display-s u-font-en-con u-text-weight-b">SERVICE</h2>
+                  <p class="c-content-l">業務案内</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="o-box o-box--transparent o-center u-bg-qua u-pt-m u-pb-m">
+        <ul class="o-cluster o-cluster--center">
+          <li><a class="c-ft-link c-content-m" href="#">会社情報</a></li>
+          <li><a class="c-ft-link c-content-m" href="#">サイト規約</a></li>
+          <li><a class="c-ft-link c-content-m" href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <p class="o-center c-suppl-m u-font-en-con u-text-center u-pt-xl u-pb-xl u-bg-primary">©︎ bbns.jp</p>
     </footer>
   </body>
 </html>

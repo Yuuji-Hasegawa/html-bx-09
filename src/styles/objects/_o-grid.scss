@@ -11,6 +11,13 @@
 
   gap: var(--gutter);
 
+  &--half {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(clamp((50% - var(--gutter) * 0.5), setting.breakpoints(underm), 100%), 1fr)
+    );
+  }
+
   &--tri {
     grid-template-columns: repeat(
       auto-fill,

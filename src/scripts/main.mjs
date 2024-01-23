@@ -7,9 +7,8 @@ lazyMap();
 import { shareForm } from "./shareForm.js";
 shareForm();
 
-/*
+import { ioView } from "./ioView.js";
+ioView();
 
-import { sidemenu } from "./sidemenu.js";
-sidemenu();
-
-*/
+import { backBtn } from "./backBtn.js";
+backBtn();
